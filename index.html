@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtherealGlowHub - YouTube Channel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" style="background-image: linear-gradient(135deg, rgba(255, 20, 147, 0.7) 0%, rgba(147, 51, 234, 0.7) 100%); background-size: cover; background-position: center;">
+        <div class="header-overlay"></div>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>✨ EtherealGlowHub ✨</h1>
+                <p class="tagline">Exploring Faith, Nature & Learning</p>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#hindi" class="nav-link" data-section="hindi">Hindi Alphabets</a></li>
+                <li><a href="#malayalam" class="nav-link" data-section="malayalam">Learn Malayalam</a></li>
+                <li><a href="#prayers" class="nav-link" data-section="prayers">Catholic Prayers</a></li>
+                <li><a href="#drawing" class="nav-link" data-section="drawing">Drawing & Painting</a></li>
+                <li><a href="#testing" class="nav-link" data-section="testing">Software Testing</a></li>
+                <li><a href="#saints-ml" class="nav-link" data-section="saints-ml">Daily Saints (Malayalam)</a></li>
+                <li><a href="#saints-en" class="nav-link" data-section="saints-en">Daily Saints (English)</a></li>
+                <li><a href="#nature" class="nav-link" data-section="nature">Nature Videos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero">
+                    <h2>Welcome to EtherealGlowHub</h2>
+                    <p class="hero-description">
+                        Your ultimate destination for inspiring and educational content for kids, families, and learners of all ages. Dive into a variety of engaging topics, including Bible stories, Christian teachings, daily Catholic saints, and artwork. Explore language lessons in English, Malayalam, Tamil, and Hindi, along with insights into the tech, banking, and finance world.
+                    </p>
+                    <p class="hero-description">
+                        From life hacks to daily life stories, fun facts, and helpful tips in software testing, there's something for everyone here. Join us for daily inspiration, learning, and growth!
+                    </p>
+                    <button class="cta-button" onclick="scrollToSection('hindi')">Explore Content</button>
+                </div>
+
+                <div class="channels-grid">
+                    <div class="channel-card">
+                        <h3>📚 Hindi Alphabets</h3>
+                        <p>Learn Hindi script and language basics</p>
+                    </div>
+                    <div class="channel-card">
+                        <h3>🙏 Catholic Prayers</h3>
+                        <p>Spiritual guidance and prayer guidance</p>
+                    </div>
+                    <div class="channel-card">
+                        <h3>⛪ Daily Saints (Malayalam)</h3>
+                        <p>Stories of saints in Malayalam language</p>
+                    </div>
+                    <div class="channel-card">
+                        <h3>⛪ Daily Saints (English)</h3>
+                        <p>Stories of saints in English language</p>
+                    </div>
+                    <div class="channel-card">
+                        <h3>🌿 Nature Videos</h3>
+                        <p>Explore the beauty of our natural world</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hindi Alphabets Section -->
+            <section id="hindi" class="section">
+                <h2 class="section-title">Hindi Alphabets</h2>
+                <p class="section-description">
+                    Master the basics of Hindi language with our comprehensive alphabet and script lessons.
+                </p>
+
+                <!-- Hindi Alphabets List -->
+                <div class="alphabets-container">
+                    <h3>Hindi Vowels (स्वर - Swar) - 13 Main Vowels</h3>
+                    <div class="alphabets-grid">
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">अ</span>
+                            <span class="alphabet-name">A</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">आ</span>
+                            <span class="alphabet-name">Aa</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">इ</span>
+                            <span class="alphabet-name">I</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">ई</span>
+                            <span class="alphabet-name">Ee</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">उ</span>
+                            <span class="alphabet-name">U</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">ऊ</span>
+                            <span class="alphabet-name">Oo</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">ऋ</span>
+                            <span class="alphabet-name">Ri</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">ए</span>
+                            <span class="alphabet-name">E</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">ऐ</span>
+                            <span class="alphabet-name">Ai</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">ओ</span>
+                            <span class="alphabet-name">O</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">औ</span>
+                            <span class="alphabet-name">Au</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">अं</span>
+                            <span class="alphabet-name">Anusvaar</span>
+                        </div>
+                        <div class="alphabet-card">
+                            <span class="alphabet-symbol">अः</span>
+                            <span class="alphabet-name">Visarg</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Hindi Consonants (व्यंजन - Vyanjan) - 33 Main Consonants</h3>
+                    
+                    <div class="consonant-group">
+                        <h4>क-वर्ग (Gutturals)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">क</span><span class="alphabet-name">Ka</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ख</span><span class="alphabet-name">Kha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ग</span><span class="alphabet-name">Ga</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">घ</span><span class="alphabet-name">Gha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ङ</span><span class="alphabet-name">Nga</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>च-वर्ग (Palatals)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">च</span><span class="alphabet-name">Cha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">छ</span><span class="alphabet-name">Chha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ज</span><span class="alphabet-name">Ja</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">झ</span><span class="alphabet-name">Jha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ञ</span><span class="alphabet-name">Nya</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>ट-वर्ग (Retroflex)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">ट</span><span class="alphabet-name">Ta</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ठ</span><span class="alphabet-name">Tha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ड</span><span class="alphabet-name">Da</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ढ</span><span class="alphabet-name">Dha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ण</span><span class="alphabet-name">Na</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>त-वर्ग (Dentals)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">त</span><span class="alphabet-name">Ta</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">थ</span><span class="alphabet-name">Tha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">द</span><span class="alphabet-name">Da</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ध</span><span class="alphabet-name">Dha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">न</span><span class="alphabet-name">Na</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>प-वर्ग (Labials)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">प</span><span class="alphabet-name">Pa</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">फ</span><span class="alphabet-name">Pha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ब</span><span class="alphabet-name">Ba</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">भ</span><span class="alphabet-name">Bha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">म</span><span class="alphabet-name">Ma</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Semi-vowels</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">य</span><span class="alphabet-name">Ya</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">र</span><span class="alphabet-name">Ra</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ल</span><span class="alphabet-name">La</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">व</span><span class="alphabet-name">Va</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Sibilants</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">श</span><span class="alphabet-name">Sha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ष</span><span class="alphabet-name">Shha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">स</span><span class="alphabet-name">Sa</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Aspirate</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">ह</span><span class="alphabet-name">Ha</span></div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 50px;">Hindi Numbers (संख्याएं - Sankhyayen)</h3>
+                    
+                    <div class="consonant-group">
+                        <h4>Numbers 1 to 10</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card">
+                                <span class="number-digit">1</span>
+                                <span class="number-hindi">एक</span>
+                                <span class="number-trans">ek</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">2</span>
+                                <span class="number-hindi">दो</span>
+                                <span class="number-trans">do</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">3</span>
+                                <span class="number-hindi">तीन</span>
+                                <span class="number-trans">tīn</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">4</span>
+                                <span class="number-hindi">चार</span>
+                                <span class="number-trans">chār</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">5</span>
+                                <span class="number-hindi">पाँच</span>
+                                <span class="number-trans">pāṅch</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">6</span>
+                                <span class="number-hindi">छह</span>
+                                <span class="number-trans">chhah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">7</span>
+                                <span class="number-hindi">सात</span>
+                                <span class="number-trans">sāt</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">8</span>
+                                <span class="number-hindi">आठ</span>
+                                <span class="number-trans">āṭh</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">9</span>
+                                <span class="number-hindi">नौ</span>
+                                <span class="number-trans">nau</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">10</span>
+                                <span class="number-hindi">दस</span>
+                                <span class="number-trans">das</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Numbers 11 to 20</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card">
+                                <span class="number-digit">11</span>
+                                <span class="number-hindi">ग्यारह</span>
+                                <span class="number-trans">gyārah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">12</span>
+                                <span class="number-hindi">बारह</span>
+                                <span class="number-trans">bārah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">13</span>
+                                <span class="number-hindi">तेरह</span>
+                                <span class="number-trans">terah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">14</span>
+                                <span class="number-hindi">चौदह</span>
+                                <span class="number-trans">chaudah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">15</span>
+                                <span class="number-hindi">पंद्रह</span>
+                                <span class="number-trans">pandrah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">16</span>
+                                <span class="number-hindi">सोलह</span>
+                                <span class="number-trans">solah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">17</span>
+                                <span class="number-hindi">सत्रह</span>
+                                <span class="number-trans">satrah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">18</span>
+                                <span class="number-hindi">अठारह</span>
+                                <span class="number-trans">aṭhārah</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">19</span>
+                                <span class="number-hindi">उन्नीस</span>
+                                <span class="number-trans">unnīs</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">20</span>
+                                <span class="number-hindi">बीस</span>
+                                <span class="number-trans">bīs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Tens (30 to 100)</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card">
+                                <span class="number-digit">30</span>
+                                <span class="number-hindi">तीस</span>
+                                <span class="number-trans">tīs</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">40</span>
+                                <span class="number-hindi">चालीस</span>
+                                <span class="number-trans">chālīs</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">50</span>
+                                <span class="number-hindi">पचास</span>
+                                <span class="number-trans">pachās</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">60</span>
+                                <span class="number-hindi">साठ</span>
+                                <span class="number-trans">sāṭh</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">70</span>
+                                <span class="number-hindi">सत्तर</span>
+                                <span class="number-trans">sattar</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">80</span>
+                                <span class="number-hindi">अस्सी</span>
+                                <span class="number-trans">assī</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">90</span>
+                                <span class="number-hindi">नब्बे</span>
+                                <span class="number-trans">nabbe</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">100</span>
+                                <span class="number-hindi">सौ</span>
+                                <span class="number-trans">sau</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Big Numbers</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card">
+                                <span class="number-digit">1,000</span>
+                                <span class="number-hindi">हज़ार</span>
+                                <span class="number-trans">hazār</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">10,000</span>
+                                <span class="number-hindi">दस हज़ार</span>
+                                <span class="number-trans">das hazār</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">100,000</span>
+                                <span class="number-hindi">एक लाख</span>
+                                <span class="number-trans">ek lākh</span>
+                            </div>
+                            <div class="number-card">
+                                <span class="number-digit">1,000,000</span>
+                                <span class="number-hindi">दस लाख</span>
+                                <span class="number-trans">das lākh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; margin-top: 50px; margin-bottom: 30px;">Video Tutorials</h3>
+                <div class="videos-grid">
+            </section>
+
+            <!-- Catholic Prayers Section -->
+            <section id="prayers" class="section">
+                <h2 class="section-title">Catholic Prayers</h2>
+                <p class="section-description">
+                    Deepen your spiritual practice with our collection of Catholic prayers and devotions.
+                </p>
+
+                <div class="playlist-promo">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Watch Prayer Tutorials - Playlist 1</h3>
+                        <p>Learn various Catholic prayers and their meanings through video guidance.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0L6nKnu1yJZb6Aqm5BBJLFV" target="_blank" class="playlist-link">
+                            ▶️ Watch Prayers Playlist 1
+                        </a>
+                    </div>
+                </div>
+
+                <div class="playlist-promo">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Watch Prayer Tutorials - Playlist 2</h3>
+                        <p>Explore additional Catholic prayers and spiritual teachings.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0KAvme1cs7_DrnYN54qzMel" target="_blank" class="playlist-link">
+                            ▶️ Watch Prayers Playlist 2
+                        </a>
+                    </div>
+                </div>
+
+                    <div class="prayer-card">
+                        <h3>🙏 Our Father (The Lord's Prayer)</h3>
+                        <p class="prayer-description">
+                            The most fundamental Catholic prayer, taught by Jesus Christ himself. It encompasses all elements of prayer: adoration, thanksgiving, supplication, and forgiveness.
+                        </p>
+                        <div class="prayer-tabs">
+                            <button class="prayer-tab-btn active" onclick="switchPrayerTab(this, 'english-prayer-1')">English</button>
+                            <button class="prayer-tab-btn" onclick="switchPrayerTab(this, 'malayalam-prayer-1')">Malayalam</button>
+                        </div>
+                        <div class="prayer-text active" id="english-prayer-1">
+                            <strong>English Version:</strong><br>
+                            "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen."
+                        </div>
+                        <div class="prayer-text" id="malayalam-prayer-1">
+                            <strong>Malayalam Version (മലയാളം):</strong><br>
+                            "ഞങ്ങളുടെ പിതാവേ, സ്വർഗ്ഗത്തിൽ ഇരുന്നവേ, നിന്റെ നാമം പരിശുദ്ധമായി വന്നരുളേണമേ; നിന്റെ രാജ്യം വരേണമേ; നിന്റെ ഇച്ഛ ഭൂമിയിൽ സ്വർഗ്ഗത്തിൽ പോലെ നിറവേറേണമേ. ഞങ്ങളുടെ നിത്യ അപ്പ് ഇന്ന് ഞങ്ങളെ തരേണമേ. ഞങ്ങൾ ഞങ്ങളോട് അതിക്രമം ചെയ്തവരോട് പോലെ, ഞങ്ങളോടുള്ള ഞങ്ങളുടെ കടങ്ങൾ പൊറിച്ചുതരേണമേ. ഞങ്ങളെ പരീക്ഷയിലേക്കു നയിക്കരുതേ, പരിപാപത്തിൽ നിന്നു രക്ഷിക്കേണമേ. ആമേൻ."
+                        </div>
+                    </div>
+
+                    <div class="prayer-card">
+                        <h3>💝 Hail Mary</h3>
+                        <p class="prayer-description">
+                            A traditional Catholic prayer addressing the Virgin Mary. It is the central prayer of the Rosary and is recited during the Hail Mary beads.
+                        </p>
+                        <div class="prayer-tabs">
+                            <button class="prayer-tab-btn active" onclick="switchPrayerTab(this, 'english-prayer-2')">English</button>
+                            <button class="prayer-tab-btn" onclick="switchPrayerTab(this, 'malayalam-prayer-2')">Malayalam</button>
+                        </div>
+                        <div class="prayer-text active" id="english-prayer-2">
+                            <strong>English Version:</strong><br>
+                            "Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+                        </div>
+                        <div class="prayer-text" id="malayalam-prayer-2">
+                            <strong>Malayalam Version (മലയാളം):</strong><br>
+                            "നാഥപ്രിയേ, കൃപയാൻ പരിപൂർണ്ണേ, നിനക്കുപകാരം പ്രഭു നിനക്കൊപ്പം ഉണ്ടാകുന്നു; സ്ത്രീകളിൽ നീ അനുഗ്രഹീതാ, നിന്റെ ഗർഭഫലം യേശുവും അനുഗ്രഹീതൻ. പരിശുദ്ധേ മരിയമേ, ദൈവമാതാവേ, നിന്ന് പാപികൾക്കുവേണ്ടി വിനയപൂർവ്വം പ്രാർത്ഥിക്കേണമേ, ഇപ്പോൾ നമ്മുടെ മരണസമയത്തും. ആമേൻ."
+                        </div>
+                        
+                    </div>
+
+                    <div class="prayer-card">
+                        <h3>👑 Hail Holy Queen</h3>
+                        <p class="prayer-description">
+                            A traditional Catholic prayer of praise to the Virgin Mary. It is recited at the conclusion of the Rosary and expresses devotion to Mary as Queen of Heaven.
+                        </p>
+                        <div class="prayer-tabs">
+                            <button class="prayer-tab-btn active" onclick="switchPrayerTab(this, 'english-prayer-3')">English</button>
+                            <button class="prayer-tab-btn" onclick="switchPrayerTab(this, 'malayalam-prayer-3')">Malayalam</button>
+                        </div>
+                        <div class="prayer-text active" id="english-prayer-3">
+                            <strong>English Version:</strong><br>
+                            "Hail, holy Queen, Mother of mercy, hail, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this vale of tears. Amen."
+                        </div>
+                        <div class="prayer-text" id="malayalam-prayer-3">
+                            <strong>Malayalam Version (മലയാളം):</strong><br>
+                            "നാഥപ്രിയെ, കരുണാനിധെ, വന്ദനമേ നിനക്കു, ജീവനേ, ശാന്തിയേ, ആശയേ നിനക്കു. ഈവ വിസ്മൃതാ, നിന്നിലേക്കു നിരാശ്രിതരായ നാം നിന്നിൽ ശരണം പ്രാർത്ഥിക്കുന്നു. നിന്നിലേക്കു നാം നിനയിപ്പുറപ്പാടുകളും കരയലുകളും അനേകം അനുതാപങ്ങളും നിവേദിക്കുന്നു, ആ കരുണയുടെ താഴ്വരയിൽ വസിക്കുമ്പോൾ. ആമേൻ."
+                        </div>
+                        
+                    </div>
+
+                    <div class="prayer-card">
+                        <h3>✨ Glory Be (Doxology)</h3>
+                        <p class="prayer-description">
+                            A short prayer of praise to the Holy Trinity. It is recited between each mystery of the Rosary and expresses glory to the Father, Son, and Holy Spirit.
+                        </p>
+                        <div class="prayer-tabs">
+                            <button class="prayer-tab-btn active" onclick="switchPrayerTab(this, 'english-prayer-4')">English</button>
+                            <button class="prayer-tab-btn" onclick="switchPrayerTab(this, 'malayalam-prayer-4')">Malayalam</button>
+                        </div>
+                        <div class="prayer-text active" id="english-prayer-4">
+                            <strong>English Version:</strong><br>
+                            "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+                        </div>
+                        <div class="prayer-text" id="malayalam-prayer-4">
+                            <strong>Malayalam Version (മലയാളം):</strong><br>
+                            "മഹിമ പിതാവിനും, പുത്രനും, പരിശുദ്ധ ആത്മാവിനുമുണ്ടായിരിക്കട്ടെ. ആദ്യം പോലെയും, ഇപ്പോൾ പോലെയും, എന്നേക്കും, വിശ്വങ്ങളിലെ വിശ്വങ്ങളുടെ വിശ്വത്തോളം. ആമേൻ."
+                        </div>
+                        
+                    </div>
+
+                    <div class="prayer-card">
+                        <h3>✝️ Apostles' Creed</h3>
+                        <p class="prayer-description">
+                            An ancient statement of Christian faith that outlines the core beliefs of the Catholic Church. It is recited during the Rosary and in many liturgical services.
+                        </p>
+                        <div class="prayer-tabs">
+                            <button class="prayer-tab-btn active" onclick="switchPrayerTab(this, 'english-prayer-5')">English</button>
+                            <button class="prayer-tab-btn" onclick="switchPrayerTab(this, 'malayalam-prayer-5')">Malayalam</button>
+                        </div>
+                        <div class="prayer-text active" id="english-prayer-5">
+                            <strong>English Version:</strong><br>
+                            "I believe in God, the Father Almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord; who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died, and was buried. Amen."
+                        </div>
+                        <div class="prayer-text" id="malayalam-prayer-5">
+                            <strong>Malayalam Version (മലയാളം):</strong><br>
+                            "ഞാൻ പരബ്രഹ്മത്തിൽ, സർവ്വശക്തിയായ പിതാവിലും, സ്വർഗ്ഗത്തിന്റെയും ഭൂമിയുടെയും സ്രഷ്ടാവിലും വിശ്വസിക്കുന്നു. ഞാൻ യേശുക്രിസ്തുവിൽ, അവന്റെ ഏകജാത പുത്രനിലും, നിത്യ നാഥനിലും വിശ്വസിക്കുന്നു, ഈ ഭൂമിയിൽ നാഥൻ ജന്മെടുത്തു, കന്യക മരിയത്തിൽ നിന്നെത്തി ജന്മെടുത്തു, കഷ്ടനടത്തത്കാരണം കൊല്ലപ്പെട്ടു, ജീവൻ നീങ്ങി, കല്ലറയിൽ പ്രവേശിച്ചു. ആമേൻ."
+                        </div>
+                        
+                    </div>
+
+                    <div class="prayer-card">
+                        <h3>💔 Act of Contrition</h3>
+                        <p class="prayer-description">
+                            A prayer expressing sincere sorrow for sins committed and a commitment to amendment. It is essential for the Sacrament of Reconciliation (Confession).
+                        </p>
+                        <div class="prayer-tabs">
+                            <button class="prayer-tab-btn active" onclick="switchPrayerTab(this, 'english-prayer-6')">English</button>
+                            <button class="prayer-tab-btn" onclick="switchPrayerTab(this, 'malayalam-prayer-6')">Malayalam</button>
+                        </div>
+                        <div class="prayer-text active" id="english-prayer-6">
+                            <strong>English Version:</strong><br>
+                            "O my God, I am heartily sorry for having offended Thee, and I detest all my sins, because I dread the loss of heaven, and the pains of hell; but most of all because they offend Thee, my God, who art all good and deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life. Amen."
+                        </div>
+                        <div class="prayer-text" id="malayalam-prayer-6">
+                            <strong>Malayalam Version (മലയാളം):</strong><br>
+                            "എന്റെ ദൈവമേ, നിനക്കെതിരെ പാപം കൈത്തോളം ചെയ്തതിന് ഞാൻ ഹൃദയത്തോടെ ഖേദിക്കുന്നു, എന്റെ സകല പാപങ്ങളെയും വെറുക്കുന്നു, കാരണം ഞാൻ സ്വർഗ്ഗ നഷ്ടത്തെയും നരകശാസ്തിയെയും ഭയപ്പെടുന്നു; എന്നാൽ ഏറ്റവുമധികം കാരണം അവ നിന്നെ കോപിപ്പിക്കുന്നു, എന്റെ ദൈവമെ, നീ സകലകല്യാണവും അത്യന്തം പ്രിയവുമാണ്. നിന്റെ കൃപയാൽ സഹായിക്കപ്പെട്ട് ഞാൻ ദൃഢമായി സങ്കല്പിക്കുന്നു, എന്റെ പാപങ്ങൾ ഏറ്റു പറയാനും, പ്രായശ്ചിത്തം നിറവേറ്റാനും, എന്റെ ജീവിതം സുധാരണ ചെയ്യാനും. ആമേൻ."
+                        </div>
+                        
+                    </div>
+            </section>
+
+            <!-- Software Testing Section -->
+            <section id="testing" class="section">
+                <h2 class="section-title">Software Testing</h2>
+                <p class="section-description">
+                    Master the art of software testing with comprehensive tutorials covering testing fundamentals, best practices, and advanced techniques.
+                </p>
+
+                <div class="notes-intro">
+                    <h3>📋 Software Testing Basics</h3>
+                    <p><strong>What is Software Testing?</strong></p>
+                    <p>Software Testing is a process of evaluating software to ensure it meets the specified requirements and functions correctly. It involves finding defects, bugs, and errors in the software before it reaches the end user.</p>
+                    
+                    <p><strong>Types of Software Testing:</strong></p>
+                    <ul class="testing-types">
+                        <li><strong>Unit Testing:</strong> Testing individual components or functions</li>
+                        <li><strong>Integration Testing:</strong> Testing how different modules work together</li>
+                        <li><strong>System Testing:</strong> Testing the complete software system</li>
+                        <li><strong>Acceptance Testing:</strong> Testing whether software meets user requirements</li>
+                        <li><strong>Performance Testing:</strong> Testing system speed and reliability under load</li>
+                        <li><strong>Security Testing:</strong> Testing for vulnerabilities and security threats</li>
+                        <li><strong>Regression Testing:</strong> Testing after code changes to ensure nothing breaks</li>
+                        <li><strong>Smoke Testing:</strong> Quick preliminary testing of basic functionality</li>
+                    </ul>
+                </div>
+
+                <div class="playlist-promo">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Watch Complete Testing Course</h3>
+                        <p>Learn software testing from basics to advanced concepts with our comprehensive YouTube playlist.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0JqIycEAhMtV6m3PTanC-Jh" target="_blank" class="playlist-link">
+                            ▶️ Watch Testing Tutorials
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drawing & Painting Section -->
+            <section id="drawing" class="section">
+                <h2 class="section-title">Drawing & Painting</h2>
+                <p class="section-description">
+                    Master the art of drawing and painting with our comprehensive tutorials covering everything from basic sketches to advanced techniques.
+                </p>
+
+                <div class="playlist-promo">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Watch All Drawing Tutorials</h3>
+                        <p>Explore complete courses on acrylic painting, oil pastels, pencil shading, and more.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0LoYgzwOACPuAwgn265EeIH" target="_blank" class="playlist-link">
+                            ▶️ Watch Drawing Playlist
+                        </a>
+                    </div>
+                </div>
+
+                <div class="videos-grid">
+                    <div class="video-card">
+                        
+                        <h3>Pencil Shading Basics</h3>
+                        <p>Learn fundamental pencil shading techniques</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>Acrylic Painting</h3>
+                        <p>Master acrylic painting from basics to advanced</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>Oil Pastels Techniques</h3>
+                        <p>Create beautiful artwork with oil pastels</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learn Malayalam Section -->
+            <section id="malayalam" class="section">
+                <h2 class="section-title">Learn Malayalam through English</h2>
+                <p class="section-description">
+                    Discover the beautiful Malayalam language with English transliteration and pronunciation guides.
+                </p>
+
+                <div class="alphabets-container">
+                    <h3>Malayalam Alphabets (അക്ഷരങ്ങൾ - Akshrangal)</h3>
+                    
+                    <div class="consonant-group">
+                        <h4>Vowels (സ്വരങ്ങൾ - Swarangal)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">അ</span><span class="alphabet-name">A</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ആ</span><span class="alphabet-name">Aa</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഇ</span><span class="alphabet-name">I</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഈ</span><span class="alphabet-name">Ee</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഉ</span><span class="alphabet-name">U</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഊ</span><span class="alphabet-name">Oo</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഋ</span><span class="alphabet-name">Ri</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഏ</span><span class="alphabet-name">E</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഐ</span><span class="alphabet-name">Ai</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഒ</span><span class="alphabet-name">O</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഓ</span><span class="alphabet-name">Oo</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഔ</span><span class="alphabet-name">Au</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Consonants (വ്യഞ്ജനങ്ങൾ - Vyanjnangal)</h4>
+                        <div class="alphabets-grid">
+                            <div class="alphabet-card"><span class="alphabet-symbol">ക</span><span class="alphabet-name">Ka</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഖ</span><span class="alphabet-name">Kha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഗ</span><span class="alphabet-name">Ga</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഘ</span><span class="alphabet-name">Gha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ച</span><span class="alphabet-name">Cha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഛ</span><span class="alphabet-name">Chha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ജ</span><span class="alphabet-name">Ja</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഝ</span><span class="alphabet-name">Jha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ട</span><span class="alphabet-name">Ta</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഠ</span><span class="alphabet-name">Tha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഡ</span><span class="alphabet-name">Da</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഢ</span><span class="alphabet-name">Dha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ണ</span><span class="alphabet-name">Na</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ത</span><span class="alphabet-name">Tha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഥ</span><span class="alphabet-name">Tha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ദ</span><span class="alphabet-name">Da</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ധ</span><span class="alphabet-name">Dha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ന</span><span class="alphabet-name">Na</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">പ</span><span class="alphabet-name">Pa</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഫ</span><span class="alphabet-name">Pha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ബ</span><span class="alphabet-name">Ba</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഭ</span><span class="alphabet-name">Bha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">മ</span><span class="alphabet-name">Ma</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">യ</span><span class="alphabet-name">Ya</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ര</span><span class="alphabet-name">Ra</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ല</span><span class="alphabet-name">La</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">വ</span><span class="alphabet-name">Va</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ശ</span><span class="alphabet-name">Sha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഷ</span><span class="alphabet-name">Shha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">സ</span><span class="alphabet-name">Sa</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഹ</span><span class="alphabet-name">Ha</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ള</span><span class="alphabet-name">Lla</span></div>
+                            <div class="alphabet-card"><span class="alphabet-symbol">ഴ</span><span class="alphabet-name">Zha</span></div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 50px;">Malayalam Numbers (സംഖ്യകൾ - Sankhyakal)</h3>
+                    
+                    <div class="consonant-group">
+                        <h4>Numbers 1 to 10</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card"><span class="number-digit">1</span><span class="number-hindi">ഒന്ന്</span><span class="number-trans">onnu</span></div>
+                            <div class="number-card"><span class="number-digit">2</span><span class="number-hindi">രണ്ട്</span><span class="number-trans">randu</span></div>
+                            <div class="number-card"><span class="number-digit">3</span><span class="number-hindi">മൂന്ന്</span><span class="number-trans">moonu</span></div>
+                            <div class="number-card"><span class="number-digit">4</span><span class="number-hindi">നാല്</span><span class="number-trans">naal</span></div>
+                            <div class="number-card"><span class="number-digit">5</span><span class="number-hindi">അഞ്ച്</span><span class="number-trans">anju</span></div>
+                            <div class="number-card"><span class="number-digit">6</span><span class="number-hindi">ആറ്</span><span class="number-trans">aaru</span></div>
+                            <div class="number-card"><span class="number-digit">7</span><span class="number-hindi">ഏഴ്</span><span class="number-trans">eazhu</span></div>
+                            <div class="number-card"><span class="number-digit">8</span><span class="number-hindi">എട്ട്</span><span class="number-trans">ettu</span></div>
+                            <div class="number-card"><span class="number-digit">9</span><span class="number-hindi">ഒമ്പത്</span><span class="number-trans">ompatu</span></div>
+                            <div class="number-card"><span class="number-digit">10</span><span class="number-hindi">പത്ത്</span><span class="number-trans">pattu</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Numbers 11 to 20</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card"><span class="number-digit">11</span><span class="number-hindi">പതിനൊന്ന്</span><span class="number-trans">pathinonnu</span></div>
+                            <div class="number-card"><span class="number-digit">12</span><span class="number-hindi">പതിരണ്ട്</span><span class="number-trans">pathirandu</span></div>
+                            <div class="number-card"><span class="number-digit">13</span><span class="number-hindi">പതിമൂന്ന്</span><span class="number-trans">pathimoonu</span></div>
+                            <div class="number-card"><span class="number-digit">14</span><span class="number-hindi">പതിനാല്</span><span class="number-trans">pathinaal</span></div>
+                            <div class="number-card"><span class="number-digit">15</span><span class="number-hindi">പതിനഞ്ച്</span><span class="number-trans">pathianju</span></div>
+                            <div class="number-card"><span class="number-digit">16</span><span class="number-hindi">പതിനാറ്</span><span class="number-trans">pathinarru</span></div>
+                            <div class="number-card"><span class="number-digit">17</span><span class="number-hindi">പതിനേഴ്</span><span class="number-trans">pathineazhu</span></div>
+                            <div class="number-card"><span class="number-digit">18</span><span class="number-hindi">പതിനെട്ട്</span><span class="number-trans">pathinettu</span></div>
+                            <div class="number-card"><span class="number-digit">19</span><span class="number-hindi">പത്തൊമ്പത്</span><span class="number-trans">pattompatu</span></div>
+                            <div class="number-card"><span class="number-digit">20</span><span class="number-hindi">ഇരുപത്</span><span class="number-trans">irupatu</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Multiples (30 to 100)</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card"><span class="number-digit">30</span><span class="number-hindi">മുപ്പത്</span><span class="number-trans">muppatu</span></div>
+                            <div class="number-card"><span class="number-digit">40</span><span class="number-hindi">നാല്പത്</span><span class="number-trans">naalpatu</span></div>
+                            <div class="number-card"><span class="number-digit">50</span><span class="number-hindi">അങ്ങത്</span><span class="number-trans">anngatu</span></div>
+                            <div class="number-card"><span class="number-digit">60</span><span class="number-hindi">അറുപത്</span><span class="number-trans">arupatu</span></div>
+                            <div class="number-card"><span class="number-digit">70</span><span class="number-hindi">എഴുപത്</span><span class="number-trans">ezhupathu</span></div>
+                            <div class="number-card"><span class="number-digit">80</span><span class="number-hindi">എണ്ണപത്</span><span class="number-trans">ennapatu</span></div>
+                            <div class="number-card"><span class="number-digit">90</span><span class="number-hindi">തൊണ്ണൂറ്</span><span class="number-trans">thonnooru</span></div>
+                            <div class="number-card"><span class="number-digit">100</span><span class="number-hindi">നൂറ്</span><span class="number-trans">nooru</span></div>
+                        </div>
+                    </div>
+
+                    <div class="consonant-group">
+                        <h4>Large Numbers</h4>
+                        <div class="numbers-grid">
+                            <div class="number-card"><span class="number-digit">1,000</span><span class="number-hindi">ആയിരം</span><span class="number-trans">aayiram</span></div>
+                            <div class="number-card"><span class="number-digit">10,000</span><span class="number-hindi">പതിനായിരം</span><span class="number-trans">pathirayiram</span></div>
+                            <div class="number-card"><span class="number-digit">100,000</span><span class="number-hindi">ലക്ഷം</span><span class="number-trans">lakshm</span></div>
+                            <div class="number-card"><span class="number-digit">1,000,000</span><span class="number-hindi">പതിലക്ഷം</span><span class="number-trans">pathilakshm</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daily Saints (Malayalam) Section -->
+            <section id="saints-ml" class="section">
+                <h2 class="section-title">Daily Saints (Malayalam)</h2>
+                <p class="section-description">
+                    Explore inspiring stories of saints in Malayalam, celebrating their faith and devotion.
+                </p>
+
+                <div class="book-promo">
+                    <div class="book-promo-content">
+                        <h3>📖 Get the Complete Book</h3>
+                        <p>"Daily Saints: Inspiration for Young Believers" - A comprehensive guide to saint stories and spiritual growth.</p>
+                        <a href="https://www.amazon.in/Daily-Saints-Inspiration-young-Believers-ebook/dp/B0DTZ5HVYP" target="_blank" class="book-link">
+                            📚 Get the Book on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <div class="playlist-promo">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Watch the Full Playlist</h3>
+                        <p>Explore all Daily Saints stories in Malayalam on our YouTube channel.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0LgkitU9hZc6qF6RYtWAcE2" target="_blank" class="playlist-link">
+                            ▶️ Watch on YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="videos-grid">
+                    <div class="video-card">
+                        
+                        <h3>St. Thérèse of Lisieux</h3>
+                        <p>Malayalam | വിശ്വാസത്തിന്റെ പ്രേരണ</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>St. Francis of Assisi</h3>
+                        <p>Malayalam | പ്രകൃതിപ്രേമിയുടെ കഥ</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>St. Joan of Arc</h3>
+                        <p>Malayalam | ധൈര്യത്തിന്റെ പ്രതീകം</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daily Saints (English) Section -->
+            <section id="saints-en" class="section">
+                <h2 class="section-title">Daily Saints (English)</h2>
+                <p class="section-description">
+                    Discover daily reflections on the lives of saints told in English.
+                </p>
+
+                <div class="book-promo">
+                    <div class="book-promo-content">
+                        <h3>📖 Get the Complete Book</h3>
+                        <p>"Daily Saints: Inspiration for Young Believers" - A comprehensive guide to saint stories and spiritual growth.</p>
+                        <a href="https://www.amazon.in/Daily-Saints-Inspiration-young-Believers-ebook/dp/B0DTZ5HVYP" target="_blank" class="book-link">
+                            📚 Get the Book on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <div class="playlist-promo">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Watch the Full Playlist</h3>
+                        <p>Explore all Daily Saints stories in English on our YouTube channel.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0L1jYHW8S6fpqtZ9X1_d_qU" target="_blank" class="playlist-link">
+                            ▶️ Watch on YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="videos-grid">
+                    <div class="video-card">
+                        
+                        <h3>St. Augustine</h3>
+                        <p>The Journey from Darkness to Light</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>St. Catherine of Siena</h3>
+                        <p>Spiritual Wisdom and Divine Love</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>St. Padre Pio</h3>
+                        <p>Miracles and Devotion in Modern Times</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nature Videos Section -->
+            <section id="nature" class="section">
+                <h2 class="section-title">Nature Videos</h2>
+                <p class="section-description">
+                    Experience the majesty and tranquility of nature's wonders through stunning cinematography.
+                </p>
+                <div class="videos-grid">
+                    <div class="video-card">
+                        
+                        <h3>Mountain Serenity</h3>
+                        <p>Journey through majestic mountain peaks</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>Ocean Paradise</h3>
+                        <p>Explore the mysteries beneath the waves</p>
+                    </div>
+                    <div class="video-card">
+                        
+                        <h3>Forest Wonders</h3>
+                        <p>Discover the hidden beauty of ancient forests</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EtherealGlowHub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@Etherealglowhub" target="_blank" title="YouTube Channel">📺</a>
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">📷</a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">👍</a>
+            </div>
+            <p class="subscribe-text"><a href="https://www.youtube.com/@Etherealglowhub" target="_blank" class="subscribe-link">Subscribe to EtherealGlowHub on YouTube</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
