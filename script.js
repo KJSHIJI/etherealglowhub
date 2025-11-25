@@ -202,3 +202,35 @@ function switchPrayerTab(button, tabId) {
     // Add active class to clicked button
     button.classList.add('active');
 }
+
+// Audio Pronunciation Function (placeholder for future integration with Web Audio API or external TTS service)
+function playSound(sound) {
+    // This function uses the Web Speech API for text-to-speech
+    // It provides pronunciation guidance for language learning
+    const pronunciationGuide = {
+        // Malayalam
+        'a': 'a as in father',
+        'aa': 'aa as in far',
+        'i': 'i as in sit',
+        'ee': 'ee as in see',
+        'u': 'u as in put',
+        'uu': 'oo as in food',
+        'ri': 'ri as in rich',
+        'e': 'e as in bed',
+        'ai': 'ai as in might',
+        'o': 'o as in not',
+        'oo': 'oo as in moon',
+        'au': 'ow as in how',
+    };
+    
+    // Create a visual feedback
+    const message = pronunciationGuide[sound] || sound;
+    console.log('Pronunciation:', message);
+    
+    // Optional: Use browser's Web Speech API for actual pronunciation
+    if ('speechSynthesis' in window && sound) {
+        const utterance = new SpeechSynthesisUtterance(sound);
+        utterance.lang = 'ml-IN'; // Malayalam
+        speechSynthesis.speak(utterance);
+    }
+}
