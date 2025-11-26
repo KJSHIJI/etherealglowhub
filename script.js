@@ -5,33 +5,6 @@ const navbar = document.getElementById('navbar');
 menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
-const joinBtn = document.getElementById('joinBtn');       // Bottom button
-const joinBtnTop = document.getElementById('joinBtnTop'); // Top button
-const courseModal = document.getElementById('courseModal');
-const premiumBtn = document.getElementById('premiumBtn');
-const premiumModal = document.getElementById('premiumModal');
-const closeBtns = document.querySelectorAll('.close');
-
-// Open Join Our Courses modal from bottom button
-if (joinBtn) {
-    joinBtn.addEventListener('click', () => {
-        courseModal.style.display = 'block';
-    });
-}
-
-// Open Join Our Courses modal from top button
-if (joinBtnTop) {
-    joinBtnTop.addEventListener('click', () => {
-        courseModal.style.display = 'block';
-    });
-}
-
-// Open Premium Classes modal
-if (premiumBtn) {
-    premiumBtn.addEventListener('click', () => {
-        premiumModal.style.display = 'block';
-    });
-}
 
 // Close modals when clicking X
 closeBtns.forEach(btn => {
