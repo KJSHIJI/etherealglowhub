@@ -11,7 +11,24 @@ if (joinBtnTop) {
         courseModal.style.display = 'block';
     });
 }
+const dateInput = document.getElementById('preferredDate');
+if (dateInput) {
+    dateInput.addEventListener('input', () => {
+        const selectedDate = new Date(dateInput.value);
+        const day = selectedDate.getDay(); // 0 = Sunday, 6 = Saturday
+        if (day !== 6) {
+            alert('Please select a Saturday date.');
+            dateInput.value = ''; // Clear invalid date
+        }
+    });
 
+    // Set minimum date to today
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+}
 
 // Close mobile menu when a link is clicked
 const navLinks = document.querySelectorAll('.nav-link');
