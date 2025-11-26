@@ -11,6 +11,12 @@ if (joinBtnTop) {
         courseModal.style.display = 'block';
     });
 }
+
+#joinBtnTop {
+    background-color: #ff1493; /* Pink */
+    color: white;
+}
+
 // Close mobile menu when a link is clicked
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
