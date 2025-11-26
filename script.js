@@ -12,23 +12,68 @@ if (joinBtnTop) {
     });
 }
 
-const dateInput = document.getElementById('preferredDate');
-if (dateInput) {
-    dateInput.addEventListener('input', () => {
-        const selectedDate = new Date(dateInput.value);
-        const day = selectedDate.getDay(); // 0=Sunday, 6=Saturday
-        if (day !== 6) {
-            alert('Please select a Saturday date.');
-            dateInput.value = ''; // Clear invalid date
-        }
-    });
-
-    // Set minimum date to today
+/* Regular Classes: Dropdown with Saturdays */
+const dateSelect = document.getElementById('preferredDate');
+if (dateSelect) {
     const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    dateInput.min = `${yyyy}-${mm}-${dd}`;
+    for (let i = 0; i < 12; i++) { // Next 12 Saturdays
+        const nextSaturday = new Date(today);
+        nextSaturday.setDate(today.getDate() + ((6 - today.getDay()) + (i * 7)));
+        const option = document.createElement('option');
+        option.value = nextSaturday.toISOString().split('T')[0];
+        option.textContent = nextSaturday.toDateString();
+        dateSelect.appendChild(option);
+    }
+}
+
+/* Premium Classes: Dropdown with Saturdays & Sundays */
+const premiumBtn = document.getElementById('premiumBtn');
+const premiumModal = document.getElementById('premiumModal');
+const premiumClose = document.querySelector('.premium-close');
+const premiumForm = document.getElementById('premiumForm');
+const premiumConfirmation = document.getElementById('premiumConfirmation');
+const premiumDateSelect = document.getElementById('premiumDate');
+
+if (premiumBtn) {
+    premiumBtn.addEventListener('click', () => {
+        premiumModal.style.display = 'block';
+    });
+}
+
+if (premiumClose) {
+    premiumClose.addEventListener('click', () => {
+        premiumModal.style.display = 'none';
+    });
+}
+
+window.addEventListener('click', (e) => {
+    if (e.target === premiumModal) {
+        premiumModal.style.display = 'none';
+    }
+});
+
+// Populate Saturdays and Sundays for next 8 weeks
+if (premiumDateSelect) {
+    const today = new Date();
+    for (let i = 0; i < 56; i++) { // Check next 56 days
+        const nextDate = new Date(today);
+        nextDate.setDate(today.getDate() + i);
+        const day = nextDate.getDay();
+        if (day === 6 || day === 0) { // Saturday or Sunday
+            const option = document.createElement('option');
+            option.value = nextDate.toISOString().split('T')[0];
+            option.textContent = nextDate.toDateString();
+            premiumDateSelect.appendChild(option);
+        }
+    }
+}
+
+if (premiumForm) {
+    premiumForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        premiumConfirmation.classList.remove('hidden');
+        premiumForm.reset();
+    });
 }
 
 // Close mobile menu when a link is clicked

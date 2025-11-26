@@ -20,6 +20,7 @@
             </div>
             <button class="menu-toggle" id="menuToggle">☰</button>
             <button id="joinBtnTop" class="cta-button" style="margin-left:auto;">Join Our Courses</button>
+            <button id="premiumBtn" class="cta-button" style="margin-left:10px;"> Premium Classes ✨</button>
         </div>
     </header>
 
@@ -1242,7 +1243,7 @@
         <input type="text" name="whatsapp" required>
         
         <label>Preferred Date:</label>
-        <input type="date" name="date" id="preferredDate" required>
+        <select name="date" id="preferredDate" required></select>
         
         <label>Transaction ID:</label>
         <input type="text" name="transaction" required>
@@ -1255,6 +1256,45 @@
     <p id="confirmationMsg" class="hidden" style="margin-top:15px; color:green; font-weight:bold;">
         ✅ Thank you! We will confirm your course date via WhatsApp.
     </p>
+</div>
+<!-- Premium Classes Modal -->
+<div id="premiumModal" class="modal">
+    <div class="modal-content">
+        <span class="close premium-close">&times;</span>
+        <h2>Exclusive Premium Classes ✨</h2>
+        <p>2-hour sessions on Saturday and Sunday</p>
+        <form id="premiumForm">
+            <label>Select Course:</label>
+            <select name="premiumCourse" required>
+                <option value="">-- Choose a Course --</option>
+                <option value="Learn Malayalam">Learn Malayalam</option>
+                <option value="Learn Tamil">Learn Tamil</option>
+                <option value="Learn English">Learn English</option>
+                <option value="Learn Hindi">Learn Hindi</option>
+                <option value="Drawing for Kids">Drawing for Kids</option>
+            </select>
+
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>WhatsApp Number:</label>
+            <input type="text" name="whatsapp" required>
+
+            <label>Select Date:</label>
+            <select name="date" id="premiumDate" required></select>
+
+            <label>Transaction ID:</label>
+            <input type="text" name="transaction" required>
+
+            <label>Upload Screenshot:</label>
+            <input type="file" name="screenshot" accept="image/*" required>
+
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+        <p id="premiumConfirmation" class="hidden" style="margin-top:15px; color:green; font-weight:bold;">
+            ✅ Thank you! We will confirm your premium class via WhatsApp.
+        </p>
+    </div>
 </div>
     </main>
 
