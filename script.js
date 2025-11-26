@@ -5,7 +5,12 @@ const navbar = document.getElementById('navbar');
 menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
-
+const joinBtnTop = document.getElementById('joinBtnTop');
+if (joinBtnTop) {
+    joinBtnTop.addEventListener('click', () => {
+        courseModal.style.display = 'block';
+    });
+}
 // Close mobile menu when a link is clicked
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
