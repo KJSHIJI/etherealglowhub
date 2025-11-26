@@ -1203,30 +1203,3 @@ button:focus {
 .course-btn:hover {
     background: var(--accent-color);
 }
-
-/* Form Section */
-.form-section {
-    max-width: 600px;
-    margin: 30px auto;
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-}
-
-.form-section label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.form-section input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-}
-
-.hidden {
-    display: none;
-}
