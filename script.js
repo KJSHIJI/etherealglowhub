@@ -11,11 +11,12 @@ if (joinBtnTop) {
         courseModal.style.display = 'block';
     });
 }
+
 const dateInput = document.getElementById('preferredDate');
 if (dateInput) {
     dateInput.addEventListener('input', () => {
         const selectedDate = new Date(dateInput.value);
-        const day = selectedDate.getDay(); // 0 = Sunday, 6 = Saturday
+        const day = selectedDate.getDay(); // 0=Sunday, 6=Saturday
         if (day !== 6) {
             alert('Please select a Saturday date.');
             dateInput.value = ''; // Clear invalid date
