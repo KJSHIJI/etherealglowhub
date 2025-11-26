@@ -6,6 +6,35 @@ menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
+const joinBtn = document.getElementById('joinBtn');
+const courseModal = document.getElementById('courseModal');
+const premiumBtn = document.getElementById('premiumBtn');
+const premiumModal = document.getElementById('premiumModal');
+const closeBtns = document.querySelectorAll('.close');
+
+if (joinBtn) {
+    joinBtn.addEventListener('click', () => {
+        courseModal.style.display = 'block';
+    });
+}
+
+if (premiumBtn) {
+    premiumBtn.addEventListener('click', () => {
+        premiumModal.style.display = 'block';
+    });
+}
+
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        courseModal.style.display = 'none';
+        premiumModal.style.display = 'none';
+    });
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === courseModal) courseModal.style.display = 'none';
+    if (e.target === premiumModal) premiumModal.style.display = 'none';
+});
 
 // Close mobile menu when a link is clicked
 const navLinks = document.querySelectorAll('.nav-link');
