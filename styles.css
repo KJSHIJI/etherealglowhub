@@ -1230,3 +1230,7 @@ button:focus {
 .hidden {
     display: none;
 }
+#joinBtnTop {
+    background-color: #ff1493; /* Pink */
+    color: white;
+}
