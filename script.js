@@ -5,7 +5,6 @@ const navbar = document.getElementById('navbar');
 menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
-
 const joinBtn = document.getElementById('joinBtn');
 const courseModal = document.getElementById('courseModal');
 const premiumBtn = document.getElementById('premiumBtn');
@@ -35,7 +34,6 @@ window.addEventListener('click', (e) => {
     if (e.target === courseModal) courseModal.style.display = 'none';
     if (e.target === premiumModal) premiumModal.style.display = 'none';
 });
-
 // Close mobile menu when a link is clicked
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
