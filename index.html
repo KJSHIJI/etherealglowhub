@@ -1204,12 +1204,20 @@
         <span class="close">&times;</span>
         <h2>Select a Course</h2>
         <ul class="course-list">
-            <li><button class="course-btn" data-course="Learn Malayalam">Learn Malayalam</button></li>
-            <li><button class="course-btn" data-course="Learn Tamil">Learn Tamil</button></li>
-            <li><button class="course-btn" data-course="Learn English">Learn English</button></li>
-            <li><button class="course-btn" data-course="Learn Hindi">Learn Hindi</button></li>
-            <li><button class="course-btn" data-course="Drawing for Kids">Drawing for Kids</button></li>
+            <li><button class="course-btn" onclick="openCourseForms('Learn Malayalam')">Learn Malayalam</button></li>
+            <li><button class="course-btn" onclick="openCourseForms('Learn Tamil')">Learn Tamil</button></li>
+            <li><button class="course-btn" onclick="openCourseForms('Learn English')">Learn English</button></li>
+            <li><button class="course-btn" onclick="openCourseForms('Learn Hindi')">Learn Hindi</button></li>
+            <li><button class="course-btn" onclick="openCourseForms('Drawing for Kids')">Drawing for Kids</button></li>
         </ul>
+
+        <!-- Container for form links -->
+        <div id="formLinks" style="margin-top:20px; display:none;">
+            <h3 id="selectedCourse"></h3>
+            <p>Select your plan:</p>
+            #📄 Ordinary Course</a>
+            #⭐ Premium Course</a>
+        </div>
     </div>
 </div>
 
