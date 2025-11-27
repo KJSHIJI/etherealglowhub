@@ -154,12 +154,7 @@ body {
 }
 
 .section {
-    display: none;
-    animation: fadeIn 0.5s ease-in;
-}
-
-.section.active {
-    display: block;
+    display: block !important;
 }
 
 @keyframes fadeIn {
