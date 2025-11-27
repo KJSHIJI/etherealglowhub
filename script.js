@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 80;
+            const sectionTop = section.offsetTop - 100;
             if (pageYOffset >= sectionTop) {
                 current = section.getAttribute('id');
             }
@@ -26,13 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.style.position = 'fixed';
     backToTop.style.bottom = '20px';
     backToTop.style.right = '20px';
-    backToTop.style.padding = '10px';
+    backToTop.style.padding = '10px 15px';
     backToTop.style.background = '#9333ea';
     backToTop.style.color = '#fff';
     backToTop.style.border = 'none';
     backToTop.style.borderRadius = '5px';
     backToTop.style.cursor = 'pointer';
     backToTop.style.display = 'none';
+    backToTop.style.zIndex = '1000';
     document.body.appendChild(backToTop);
 
     window.addEventListener('scroll', () => {

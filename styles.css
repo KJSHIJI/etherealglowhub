@@ -48,7 +48,8 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: #ff1493;
 }
 
@@ -94,4 +95,11 @@ footer a {
     color: #ff1493;
     text-decoration: none;
     margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
 }
