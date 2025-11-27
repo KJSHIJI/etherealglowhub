@@ -12,16 +12,14 @@
     header p { margin: 5px 0; font-size: 1.2rem; }
     nav { background: #fff; padding: 10px; text-align: center; position: sticky; top: 70px; z-index: 999; border-bottom: 1px solid #ddd; }
     nav a { margin: 0 10px; text-decoration: none; color: #9333ea; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #ff1493; }
+    nav a:hover, nav a.active { color: #ff1493; }
     section { padding: 20px; max-width: 900px; margin: auto; background: #fff; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     section h2 { color: #9333ea; margin-bottom: 10px; }
     section a { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #9333ea; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
     section a:hover { background: #ff1493; }
     footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 20px; }
     footer a { color: #ff1493; text-decoration: none; margin: 0 10px; }
-    @media (max-width: 768px) {
-        nav a { display: block; margin: 8px 0; }
-    }
+    @media (max-width: 768px) { nav a { display: block; margin: 8px 0; } }
 </style>
 </head>
 <body>
@@ -53,69 +51,20 @@
     <h2>Welcome to EtherealGlowHub</h2>
     <p>🌟 Your complete platform for inspiring and educational content designed for kids, families, and learners of all ages!</p>
     <p>Learn Languages: Hindi, Malayalam, Tamil, French & more | Spiritual Growth: Bible stories, Catholic prayers, daily saints | Creative Skills: Art & painting tutorials | Tech & Finance: Software testing, banking tips, life hacks | Fun Learning: Amazing videos & fascinating facts!</p>
-    <p>Whether you're exploring new languages, deepening your faith, mastering technical skills, or simply seeking daily inspiration—EtherealGlowHub has something special for you.</p>
 </section>
 
-<section id="testing">
-    <h2>Software Testing</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0JqIycEAhMtV6m3PTanC-Jh▶ Watch Playlist</a>
-</section>
-
-<section id="drawing">
-    <h2>Drawing & Painting</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0LoYgzwOACPuAwgn265EeIH▶ Watch Playlist</a>
-</section>
-
-<section id="hindi">
-    <h2>Learn Hindi</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0IafCa4qLAXQ87pEtGfxS_4▶ Watch Playlist</a>
-</section>
-
-<section id="malayalam">
-    <h2>Learn Malayalam</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0J9gOAQPlYRUysZ50-7HBu8▶ Watch Playlist</a>
-</section>
-
-<section id="french">
-    <h2>Learn French</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0IH9hqvPoke3VzqsMP6Djg0▶ Watch Playlist</a>
-</section>
-
-<section id="tamil">
-    <h2>Learn Tamil</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0IHsrmgQFFPhS4M_Cqv_AK0▶ Watch Playlist</a>
-</section>
-
-<section id="prayers">
-    <h2>Catholic Prayers</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0L6nKnu1yJZb6Aqm5BBJLFV▶ Playlist 1</a>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0KAvme1cs7_DrnYN54qzMel▶ Playlist 2</a>
-</section>
-
-<section id="saints-ml">
-    <h2>Daily Saints (Malayalam)</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0LgkitU9hZc6qF6RYtWAcE2▶ Watch Playlist</a>
-</section>
-
-<section id="saints-en">
-    <h2>Daily Saints (English)</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0L1jYHW8S6fpqtZ9X1_d_qU▶ Watch Playlist</a>
-</section>
-
-<section id="nature">
-    <h2>Nature Videos</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0IIL5YyTUzp3sLEP8AZLxq5▶ Watch Playlist</a>
-</section>
-
-<section id="fun">
-    <h2>Fun Facts</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0I8FFfcBDK5Qj11H5e0zcHt▶ Watch Playlist</a>
-</section>
-
-<section id="amazing">
-    <h2>Amazing Videos</h2>
-    https://www.youtube.com/playlist?list=PLZEq-4lPRg0IXOgTxpcO1H24q2Y386LLg▶ Watch Playlist</a>
-</section>
+<section id="testing"><h2>Software Testing</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0JqIycEAhMtV6m3PTanC-Jh▶ Watch Playlist</a></section>
+<section id="drawing"><h2>Drawing & Painting</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0LoYgzwOACPuAwgn265EeIH▶ Watch Playlist</a></section>
+<section id="hindi"><h2>Learn Hindi</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0IafCa4qLAXQ87pEtGfxS_4▶ Watch Playlist</a></section>
+<section id="malayalam"><h2>Learn Malayalam</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0J9gOAQPlYRUysZ50-7HBu8▶ Watch Playlist</a></section>
+<section id="french"><h2>Learn French</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0IH9hqvPoke3VzqsMP6Djg0▶ Watch Playlist</a></section>
+<section id="tamil"><h2>Learn Tamil</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0IHsrmgQFFPhS4M_Cqv_AK0▶ Watch Playlist</a></section>
+<section id="prayers"><h2>Catholic Prayers</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0L6nKnu1yJZb6Aqm5BBJLFV▶ Playlist 1</a>https://www.youtube.com/playlist?list=PLZEq-4lPRg0KAvme1cs7_DrnYN54qzMel▶ Playlist 2</a></section>
+<section id="saints-ml"><h2>Daily Saints (Malayalam)</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0LgkitU9hZc6qF6RYtWAcE2▶ Watch Playlist</a></section>
+<section id="saints-en"><h2>Daily Saints (English)</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0L1jYHW8S6fpqtZ9X1_d_qU▶ Watch Playlist</a></section>
+<section id="nature"><h2>Nature Videos</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0IIL5YyTUzp3sLEP8AZLxq5▶ Watch Playlist</a></section>
+<section id="fun"><h2>Fun Facts</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0I8FFfcBDK5Qj11H5e0zcHt▶ Watch Playlist</a></section>
+<section id="amazing"><h2>Amazing Videos</h2>https://www.youtube.com/playlist?list=PLZEq-4lPRg0IXOgTxpcO1H24q2Y386LLg▶ Watch Playlist</a></section>
 
 <section id="contact">
     <h2>Contact Us</h2>
@@ -124,12 +73,55 @@
 
 <footer>
     <p>© 2025 EtherealGlowHub. All rights reserved.</p>
-    <p>
-        https://www.youtube.com/@Etherealglowhub📺 YouTube</a> |
-        https://www.instagram.com/etherealglowhub/📷 Instagram</a>
-    </p>
-    <p>https://www.youtube.com/@EtherealglowhubSubscribe to EtherealGlowHub on YouTube</a></p>
+    <p>https://www.youtube.com/@Etherealglowhub📺 YouTube</a> | https://www.instagram.com/etherealglowhub/📷 Instagram</a></p>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    const backToTop = document.createElement('button');
+    backToTop.textContent = '⬆ Back to Top';
+    backToTop.style.position = 'fixed';
+    backToTop.style.bottom = '20px';
+    backToTop.style.right = '20px';
+    backToTop.style.padding = '10px 15px';
+    backToTop.style.background = '#9333ea';
+    backToTop.style.color = '#fff';
+    backToTop.style.border = 'none';
+    backToTop.style.borderRadius = '5px';
+    backToTop.style.cursor = 'pointer';
+    backToTop.style.display = 'none';
+    backToTop.style.zIndex = '1000';
+    document.body.appendChild(backToTop);
+
+    window.addEventListener('scroll', () => {
+        backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
 
 </body>
 </html>
