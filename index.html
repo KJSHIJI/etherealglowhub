@@ -1203,57 +1203,66 @@
                 </div>
             </section>
         </div>
-        <!-- Join Our Courses Section -->
+        
+<!-- Join Our Courses Section -->
 <div class="join-section" style="text-align:center; margin:40px;">
     <button id="joinBtn" class="cta-button">Join Our Courses</button>
 </div>
 
 <!-- Modal for Course Selection -->
-<div id="courseModal" class="modal">
+<div id="courseModal" class="modal" style="display:none;">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" style="cursor:pointer; float:right; font-size:24px;">&times;</span>
         <h2>Select a Course</h2>
-        <ul class="course-list">
-            <li><button class="course-btn" data-course="Learn Malayalam">Learn Malayalam</button></li>
-            <li><button class="course-btn" data-course="Learn Tamil">Learn Tamil</button></li>
-            <li><button class="course-btn" data-course="Learn English">Learn English</button></li>
-            <li><button class="course-btn" data-course="Learn Hindi">Learn Hindi</button></li>
-            <li><button class="course-btn" data-course="Drawing for Kids">Drawing for Kids</button></li>
+        <ul class="course-list" style="list-style:none; padding:0;">
+            <li><button class="course-btn" data-form="https://docs.google.com/forms/d/1A2btVTzj02zs84B8Lez_Zu9ydaQhCr2k8_COomwdZqs/viewform">Learn Malayalam</button></li>
+            <li><button class="course-btn" data-form="https://docs.google.com/forms/d/17_Vb64o91SCkSuo5Acy4N3cssX9d20K9i_S0cYclvHQ/viewform">Learn Tamil</button></li>
+            <li><button class="course-btn" data-form="https://docs.google.com/forms/d/1A2btVTzj02zs84B8Lez_Zu9ydaQhCr2k8_COomwdZqs/viewform">Learn English</button></li>
+            <li><button class="course-btn" data-form="https://docs.google.com/forms/d/17_Vb64o91SCkSuo5Acy4N3cssX9d20K9i_S0cYclvHQ/viewform">Learn Hindi</button></li>
+            <li><button class="course-btn" data-form="https://docs.google.com/forms/d/1A2btVTzj02zs84B8Lez_Zu9ydaQhCr2k8_COomwdZqs/viewform">Drawing for Kids</button></li>
         </ul>
+
+        <!-- Iframe for Google Form -->
+        <iframe id="formFrame" src="" width="100%" height="600" style="border:none; margin-top:20px; display:none;"></iframe>
     </div>
 </div>
 
-<!-- Form Section -->
-<div id="formSection" class="form-section hidden">
-    <h2 id="selectedCourse">Selected Course: </h2>
-    <p>Pay ₹99 via GPay to <strong>[Your UPI ID]</strong> and upload payment details below.</p>
-    <div style="text-align:center; margin-bottom:15px;">
-        <!-- QR Code Placeholder -->
-        your-qr-code.png
-        <p><strong>UPI ID:</strong> yourupi@bank</p>
-    </div>
-    <form id="enrollForm">
-        <label>Name:</label>
-        <input type="text" name="name" required>
-        
-        <label>WhatsApp Number:</label>
-        <input type="text" name="whatsapp" required>
-        
-        <label>Preferred Date:</label>
-        <input type="date" name="date" required>
-        
-        <label>Transaction ID:</label>
-        <input type="text" name="transaction" required>
-        
-        <label>Upload Screenshot:</label>
-        <input type="file" name="screenshot" accept="image/*" required>
-        
-        <button type="submit" class="cta-button">Submit</button>
-    </form>
-    <p id="confirmationMsg" class="hidden" style="margin-top:15px; color:green; font-weight:bold;">
-        ✅ Thank you! We will confirm your course date via WhatsApp.
-    </p>
-</div>
+<script>
+    const modal = document.getElementById('courseModal');
+    const joinBtn = document.getElementById('joinBtn');
+    const closeBtn = document.querySelector('.close');
+    const formFrame = document.getElementById('formFrame');
+
+    // Show modal when "Join Our Courses" button is clicked
+    joinBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        formFrame.style.display = 'none'; // Hide iframe initially
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        formFrame.src = ''; // Reset iframe
+    });
+
+    // Load Google Form when a course button is clicked
+    document.querySelectorAll('.course-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const formUrl = button.getAttribute('data-form');
+            formFrame.src = formUrl;
+            formFrame.style.display = 'block'; // Show iframe
+        });
+    });
+
+    // Close modal when clicking outside content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            formFrame.src = '';
+        }
+    });
+</script>
+
     </main>
 
     <!-- Footer -->
