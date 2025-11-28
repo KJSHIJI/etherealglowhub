@@ -289,5 +289,7 @@ if (enrollForm) {
 }
 function showForms(courseName) {
     document.getElementById('selectedCourse').textContent = `Selected Course: ${courseName}`;
+    document.getElementById('ordinaryLink').href = "https://docs.google.com/forms/d/e/1FAIpQLSeoWvHYGrglrOLm11mXmB_cZAoV7p1zOi8MqhNpyED8eVqztw/viewform?usp=publish-editor";
+    document.getElementById('premiumLink').href = "https://docs.google.com/forms/d/e/1FAIpQLSel2xaBJOAh6qr20Pc5g_Brl-Hzr8Una6RYM5B7q2XMXFatdw/viewform?usp=publish-editor";
     document.getElementById('formLinks').style.display = 'block';
 }
