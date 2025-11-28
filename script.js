@@ -287,13 +287,7 @@ if (enrollForm) {
         window.scrollTo({ top: confirmationMsg.offsetTop, behavior: 'smooth' });
     });
 }
-function openCourseForms(courseName) {
-    const ordinaryForm = "https://docs.google.com/forms/d/1A2btVTzj02zs84B8Lez_Zu9ydaQhCr2k8_COomwdZqs/viewform?edit_requested=true&pli=1";
-    const premiumForm = "https://docs.google.com/forms/d/17_Vb64o91SCkSuo5Acy4N3cssX9d20K9i_S0cYclvHQ/viewform?edit_requested=true";
-
+function showForms(courseName) {
     document.getElementById('selectedCourse').textContent = `Selected Course: ${courseName}`;
-    document.getElementById('ordinaryLink').href = ordinaryForm;
-    document.getElementById('premiumLink').href = premiumForm;
-
     document.getElementById('formLinks').style.display = 'block';
 }

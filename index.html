@@ -1204,19 +1204,27 @@
         <span class="close">&times;</span>
         <h2>Select a Course</h2>
         <ul class="course-list">
-            <li><button class="course-btn" onclick="openCourseForms('Learn Malayalam')">Learn Malayalam</button></li>
-            <li><button class="course-btn" onclick="openCourseForms('Learn Tamil')">Learn Tamil</button></li>
-            <li><button class="course-btn" onclick="openCourseForms('Learn English')">Learn English</button></li>
-            <li><button class="course-btn" onclick="openCourseForms('Learn Hindi')">Learn Hindi</button></li>
-            <li><button class="course-btn" onclick="openCourseForms('Drawing for Kids')">Drawing for Kids</button></li>
+            <li><button class="course-btn" onclick="showForms('Learn Malayalam')">Learn Malayalam</button></li>
+            <li><button class="course-btn" onclick="showForms('Learn Tamil')">Learn Tamil</button></li>
+            <li><button class="course-btn" onclick="showForms('Learn English')">Learn English</button></li>
+            <li><button class="course-btn" onclick="showForms('Learn Hindi')">Learn Hindi</button></li>
+            <li><button class="course-btn" onclick="showForms('Drawing for Kids')">Drawing for Kids</button></li>
         </ul>
 
-        <!-- Links for forms -->
+        <!-- Embedded Forms -->
         <div id="formLinks" style="margin-top:20px; display:none;">
             <h3 id="selectedCourse"></h3>
-            <p>Select your plan:</p>
-            #📄 Ordinary Course</a>
-            #⭐ Premium Course</a>
+            <p>Fill your details below:</p>
+
+            <!-- Ordinary Course Form -->
+            https://docs.google.com/forms/d/e/1FAIpQLSeoWvHYGrglrOLm11mXmB_cZAoV7p1zOi8MqhNpyED8eVqztw/viewform?embedded=true
+                Loading…
+            </iframe>
+
+            <!-- Premium Course Form -->
+            https://docs.google.com/forms/d/e/1FAIpQLSel2xaBJOAh6qr20Pc5g_Brl-Hzr8Una6RYM5B7q2XMXFatdw/viewform?embedded=true
+                Loading…
+            </iframe>
         </div>
     </div>
 </div>
