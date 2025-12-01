@@ -234,7 +234,6 @@ function playSound(sound) {
         speechSynthesis.speak(utterance);
     }
 }
-
 // ==========================
 // Course Enrollment Modal Logic
 // ==========================
@@ -244,110 +243,53 @@ const closeBtn = document.querySelector('.close');
 const courseButtons = document.querySelectorAll('.course-btn');
 const formSection = document.getElementById('formSection');
 const selectedCourse = document.getElementById('selectedCourse');
-const enrollForm = document.getElementById('enrollForm'); // if you use any local form
+const enrollForm = document.getElementById('enrollForm');
 const confirmationMsg = document.getElementById('confirmationMsg');
 
 // Open modal when "Join Our Courses" button is clicked
 if (joinBtn) {
-  joinBtn.addEventListener('click', () => {
-    courseModal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
-  });
+    joinBtn.addEventListener('click', () => {
+        courseModal.style.display = 'block';
+    });
 }
 
 // Close modal when X is clicked
-function closeModal() {
-  if (courseModal) courseModal.style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
 if (closeBtn) {
-  closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', () => {
+        courseModal.style.display = 'none';
+    });
 }
 
 // Close modal if user clicks outside the modal content
 window.addEventListener('click', (e) => {
-  if (e.target === courseModal) {
-    closeModal();
-  }
+    if (e.target === courseModal) {
+        courseModal.style.display = 'none';
+    }
 });
 
-// Handle course selection from modal buttons
-courseButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const courseName = button.dataset.course || button.getAttribute('data-course');
-    showForms(courseName);
-    closeModal();
-    formSection?.classList.remove('hidden');
-    window.scrollTo({ top: formSection.offsetTop, behavior: 'smooth' });
-  });
+// Handle course selection
+courseButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const courseName = button.getAttribute('data-course');
+        selectedCourse.textContent = `Selected Course: ${courseName}`;
+        courseModal.style.display = 'none';
+        formSection.classList.remove('hidden');
+        window.scrollTo({ top: formSection.offsetTop, behavior: 'smooth' });
+    });
 });
 
-// Handle any local form submission (optional)
+// Handle form submission
 if (enrollForm) {
-  enrollForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    confirmationMsg?.classList.remove('hidden');
-    enrollForm.reset();
-    window.scrollTo({ top: confirmationMsg.offsetTop, behavior: 'smooth' });
-  });
+    enrollForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        confirmationMsg.classList.remove('hidden');
+        enrollForm.reset();
+        window.scrollTo({ top: confirmationMsg.offsetTop, behavior: 'smooth' });
+    });
 }
-
-/**
- * Show Google Forms for the selected course.
- * Users can fill either one form or both—no dependency between them.
- */
 function showForms(courseName) {
-  if (selectedCourse) {
-    selectedCourse.textContent = `Selected Course: ${courseName}`;
-  }
-
-  const formLinks = document.getElementById('formLinks');
-  if (!formLinks) return;
-
-  // Render both links with clear instruction and optional "mark as submitted" toggles
-  formLinks.innerHTML = `
-    <div class="forms-intro">
-      <h4>You selected: ${courseName}</h4>
-      <p class="forms-note">
-        You can submit <strong>any one</strong> of these forms or <strong>both</strong>—as per your preference.
-        Each form opens in a new tab.
-      </p>
-    </div>
-
-    <div class="form-item">
-      <a id="ordinaryLink" href="https://docs.google.com/forms/d/e/1FAIpQLSeoWvHYGrglrOLm11mqztw/viewform?usp=publish-editorOrdinary Course Form</a>
-      <label class="submitted-toggle">
-        <input type="checkbox" id="ordinarySubmitted"> Mark as submitted
-      </label>
-    </div>
-
-    <div class="form-item">
-      <a id="premiumLink" href="https://docs.google.com/forms/d/e/1FAIpQLSel2xaBJOAh6qr20Pc5g_Brl-Hzr8Una6RYM5B7q2XMXFatdw/viewform?usp=publish-editor"
-         target="_blanked-toggle">
-        <input type="checkbox" id="premiumSubmitted"> Mark as submitted
-      </label>
-    </div>
-  `;
-
-  formLinks.style.display = 'block';
-
-  // Restore toggle state from localStorage (per course)
-  const ordinaryToggle = document.getElementById('ordinarySubmitted');
-  const premiumToggle = document.getElementById('premiumSubmitted');
-  const keyOrd = `submitted:${courseName}:ordinary`;
-  const keyPrem = `submitted:${courseName}:premium`;
-
-  ordinaryToggle.checked = localStorage.getItem(keyOrd) === 'true';
-  premiumToggle.checked = localStorage.getItem(keyPrem) === 'true';
-
-  ordinaryToggle.addEventListener('change', () => {
-    localStorage.setItem(keyOrd, ordinaryToggle.checked ? 'true' : 'false');
-  });
-  premiumToggle.addEventListener('change', () => {
-    localStorage.setItem(keyPrem, premiumToggle.checked ? 'true' : 'false');
-  });
+    document.getElementById('selectedCourse').textContent = `Selected Course: ${courseName}`;
+    document.getElementById('ordinaryLink').href = "https://docs.google.com/forms/d/e/1FAIpQLSeoWvHYGrglrOLm11mXmB_cZAoV7p1zOi8MqhNpyED8eVqztw/viewform?usp=publish-editor";
+    document.getElementById('premiumLink').href = "https://docs.google.com/forms/d/e/1FAIpQLSel2xaBJOAh6qr20Pc5g_Brl-Hzr8Una6RYM5B7q2XMXFatdw/viewform?usp=publish-editor";
+    document.getElementById('formLinks').style.display = 'block';
 }
-
-// Also support direct call if you have inline buttons like:
-// <button class="course-btn" onclick="showForms('Learn Hindi')">Learn Hindi</button>
-window.showForms = showForms;
