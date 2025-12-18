@@ -234,62 +234,59 @@ function playSound(sound) {
         speechSynthesis.speak(utterance);
     }
 }
-// ==========================
-// Course Enrollment Modal Logic
-// ==========================
+// Courses UI logic (inline, not a modal)
 const joinBtn = document.getElementById('joinBtn');
-const courseModal = document.getElementById('courseModal');
-const closeBtn = document.querySelector('.close');
 const courseButtons = document.querySelectorAll('.course-btn');
-const formSection = document.getElementById('formSection');
+const courseButtonsContainer = document.getElementById('courseButtons');
+const formLinksContainer = document.getElementById('formLinks');
 const selectedCourse = document.getElementById('selectedCourse');
-const enrollForm = document.getElementById('enrollForm');
-const confirmationMsg = document.getElementById('confirmationMsg');
 
-// Open modal when "Join Our Courses" button is clicked
-if (joinBtn) {
+// Toggle course buttons visibility when 'Join Our Courses' is clicked
+if (joinBtn && courseButtonsContainer) {
     joinBtn.addEventListener('click', () => {
-        courseModal.style.display = 'block';
+        const isHidden = courseButtonsContainer.hasAttribute('hidden');
+        if (isHidden) {
+            courseButtonsContainer.removeAttribute('hidden');
+            joinBtn.setAttribute('aria-expanded', 'true');
+            courseButtonsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            courseButtonsContainer.setAttribute('hidden', '');
+            joinBtn.setAttribute('aria-expanded', 'false');
+        }
     });
 }
 
-// Close modal when X is clicked
-if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-        courseModal.style.display = 'none';
-    });
-}
-
-// Close modal if user clicks outside the modal content
-window.addEventListener('click', (e) => {
-    if (e.target === courseModal) {
-        courseModal.style.display = 'none';
-    }
-});
-
-// Handle course selection
+// When a course button is clicked, show the two Google Form links
 courseButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const courseName = button.getAttribute('data-course');
-        selectedCourse.textContent = `Selected Course: ${courseName}`;
-        courseModal.style.display = 'none';
-        formSection.classList.remove('hidden');
-        window.scrollTo({ top: formSection.offsetTop, behavior: 'smooth' });
+        const courseName = button.textContent.trim();
+        showForms(courseName);
     });
 });
 
-// Handle form submission
-if (enrollForm) {
-    enrollForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        confirmationMsg.classList.remove('hidden');
-        enrollForm.reset();
-        window.scrollTo({ top: confirmationMsg.offsetTop, behavior: 'smooth' });
-    });
-}
+// Set the two Google Form links and reveal the links area
 function showForms(courseName) {
-    document.getElementById('selectedCourse').textContent = `Selected Course: ${courseName}`;
-    document.getElementById('ordinaryLink').href = "https://docs.google.com/forms/d/e/1FAIpQLSeoWvHYGrglrOLm11mXmB_cZAoV7p1zOi8MqhNpyED8eVqztw/viewform?usp=publish-editor";
-    document.getElementById('premiumLink').href = "https://docs.google.com/forms/d/e/1FAIpQLSel2xaBJOAh6qr20Pc5g_Brl-Hzr8Una6RYM5B7q2XMXFatdw/viewform?usp=publish-editor";
-    document.getElementById('formLinks').style.display = 'block';
+    if (selectedCourse) selectedCourse.textContent = `Selected Course: ${courseName}`;
+
+    const form1 = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+
+    // Use the exact Google Form edit/view URLs provided
+    const url1 = 'https://docs.google.com/forms/d/1tUFxKBJhjv6XfoNw5F-tTuzrqekBPb5or9fNrcc0mWg/edit';
+    const url2 = 'https://docs.google.com/forms/d/1AX4MYbSc51cGGDx1o028qD6Jco2_Tvf64rztnW73s40/edit';
+
+    if (form1) {
+        form1.href = url1;
+        form1.style.display = 'inline-block';
+    }
+    if (form2) {
+        form2.href = url2;
+        form2.style.display = 'inline-block';
+    }
+
+    if (formLinksContainer) {
+        formLinksContainer.style.display = 'block';
+        formLinksContainer.setAttribute('aria-hidden', 'false');
+        formLinksContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }

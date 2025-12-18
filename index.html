@@ -66,7 +66,27 @@
     <button class="cta-button" onclick="scrollToSection('nature')">✨ Fun & Nature</button>
     <button class="cta-button" onclick="scrollToSection('drawing')">🎨 Art & Creativity</button>
     <button class="cta-button" onclick="window.open('https://www.youtube.com/@etherealglowhub','_blank')">📺 Subscribe Now</button>
+    <button id="joinBtn" class="cta-button" aria-expanded="false">Join Our Courses</button>
 </div>            
+                
+                <!-- Course selection area (hidden initially) -->
+                <div id="coursesArea" class="courses-area" aria-live="polite" style="margin-top:18px; text-align:center;">
+                    <div id="courseButtons" class="course-buttons" hidden>
+                        <button class="course-btn" onclick="showForms('Learn Malayalam')" aria-label="Join Learn Malayalam">Learn Malayalam</button>
+                        <button class="course-btn" onclick="showForms('Learn Tamil')" aria-label="Join Learn Tamil">Learn Tamil</button>
+                        <button class="course-btn" onclick="showForms('Learn English')" aria-label="Join Learn English">Learn English</button>
+                        <button class="course-btn" onclick="showForms('Learn Hindi')" aria-label="Join Learn Hindi">Learn Hindi</button>
+                        <button class="course-btn" onclick="showForms('Drawing for Kids')" aria-label="Join Drawing for Kids">Drawing for Kids</button>
+                    </div>
+
+                    <div id="formLinks" class="form-links" hidden style="margin-top:12px;">
+                        <p id="selectedCourse" class="selected-course" style="font-weight:600; color: var(--primary-color);">Selected Course: -</p>
+                        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px;">
+                            <a id="form1" class="form-link" href="#" target="_blank" rel="noopener noreferrer">Open Registration Form 1</a>
+                            <a id="form2" class="form-link" href="#" target="_blank" rel="noopener noreferrer">Open Registration Form 2</a>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- Hindi Alphabets Section -->
@@ -75,6 +95,16 @@
                 <p class="section-description">
                     Master the basics of Hindi language with our comprehensive alphabet and script lessons.
                 </p>
+
+                <div class="playlist-promo" style="margin-bottom: 20px;">
+                    <div class="playlist-promo-content">
+                        <h3>🎬 Hindi Alphabet Tutorials</h3>
+                        <p>Start learning the Hindi alphabet with clear pronunciation and examples.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLZEq-4lPRg0IafCa4qLAXQ87pEtGfxS_4" target="_blank" class="playlist-link" aria-label="Watch Hindi Alphabet Tutorials on YouTube">
+                            ▶️ Watch Hindi Alphabet Tutorials
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Hindi Alphabets List -->
                 <div class="alphabets-container">
