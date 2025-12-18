@@ -234,59 +234,131 @@ function playSound(sound) {
         speechSynthesis.speak(utterance);
     }
 }
-// Courses UI logic (inline, not a modal)
-const joinBtn = document.getElementById('joinBtn');
-const courseButtons = document.querySelectorAll('.course-btn');
-const courseButtonsContainer = document.getElementById('courseButtons');
-const formLinksContainer = document.getElementById('formLinks');
-const selectedCourse = document.getElementById('selectedCourse');
+// ===== Course Selection Modal Logic =====
 
-// Toggle course buttons visibility when 'Join Our Courses' is clicked
-if (joinBtn && courseButtonsContainer) {
+const joinBtn = document.getElementById('joinBtn');
+const coursesModal = document.getElementById('coursesModal');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const courseListItems = document.querySelectorAll('.course-list-item');
+
+let focusedElementBeforeModal = null;
+
+// Open modal when 'Join Our Courses' button is clicked
+if (joinBtn) {
     joinBtn.addEventListener('click', () => {
-        const isHidden = courseButtonsContainer.hasAttribute('hidden');
-        if (isHidden) {
-            courseButtonsContainer.removeAttribute('hidden');
-            joinBtn.setAttribute('aria-expanded', 'true');
-            courseButtonsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-            courseButtonsContainer.setAttribute('hidden', '');
-            joinBtn.setAttribute('aria-expanded', 'false');
-        }
+        openCoursesModal();
     });
 }
 
-// When a course button is clicked, show the two Google Form links
-courseButtons.forEach(button => {
+// Close modal when close button is clicked
+if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', () => {
+        closeCoursesModal();
+    });
+}
+
+// Close modal when overlay is clicked
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', () => {
+        closeCoursesModal();
+    });
+}
+
+// Open modal function
+function openCoursesModal() {
+    if (coursesModal) {
+        focusedElementBeforeModal = document.activeElement;
+        coursesModal.removeAttribute('hidden');
+        
+        // Set focus to first course button
+        const firstCourseBtn = courseListItems[0];
+        if (firstCourseBtn) {
+            setTimeout(() => firstCourseBtn.focus(), 100);
+        }
+        
+        // Trap focus within modal
+        setupFocusTrap();
+    }
+}
+
+// Close modal function
+function closeCoursesModal() {
+    if (coursesModal) {
+        coursesModal.setAttribute('hidden', '');
+        removeFocusTrap();
+        
+        // Restore focus to button that opened the modal
+        if (focusedElementBeforeModal && focusedElementBeforeModal.focus) {
+            focusedElementBeforeModal.focus();
+        }
+    }
+}
+
+// Focus trap management
+let focusTrapListener = null;
+
+function setupFocusTrap() {
+    const focusableElements = coursesModal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    focusTrapListener = (e) => {
+        if (e.key !== 'Tab') return;
+        
+        if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            }
+        } else {
+            if (document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+    };
+    
+    coursesModal.addEventListener('keydown', focusTrapListener);
+}
+
+function removeFocusTrap() {
+    if (focusTrapListener && coursesModal) {
+        coursesModal.removeEventListener('keydown', focusTrapListener);
+    }
+}
+
+// Handle Escape key to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && coursesModal && !coursesModal.hasAttribute('hidden')) {
+        closeCoursesModal();
+    }
+});
+
+// Handle course selection - open mailto link
+courseListItems.forEach(button => {
     button.addEventListener('click', () => {
-        const courseName = button.textContent.trim();
-        showForms(courseName);
+        const courseName = button.getAttribute('data-course');
+        handleCourseSelection(courseName);
     });
 });
 
-// Set the two Google Form links and reveal the links area
-function showForms(courseName) {
-    if (selectedCourse) selectedCourse.textContent = `Selected Course: ${courseName}`;
-
-    const form1 = document.getElementById('form1');
-    const form2 = document.getElementById('form2');
-
-    // Use the exact Google Form edit/view URLs provided
-    const url1 = 'https://docs.google.com/forms/d/1tUFxKBJhjv6XfoNw5F-tTuzrqekBPb5or9fNrcc0mWg/edit';
-    const url2 = 'https://docs.google.com/forms/d/1AX4MYbSc51cGGDx1o028qD6Jco2_Tvf64rztnW73s40/edit';
-
-    if (form1) {
-        form1.href = url1;
-        form1.style.display = 'inline-block';
-    }
-    if (form2) {
-        form2.href = url2;
-        form2.style.display = 'inline-block';
-    }
-
-    if (formLinksContainer) {
-        formLinksContainer.style.display = 'block';
-        formLinksContainer.setAttribute('aria-hidden', 'false');
-        formLinksContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+function handleCourseSelection(courseName) {
+    const email = 'etherealglowhub1@gmail.com';
+    const subject = `Enquiry - ${courseName}`;
+    const body = `Hello EtherealGlowHub Team,\nI would like to enquire about "${courseName}".\nPlease share details (schedule, fees, duration).\nThanks!`;
+    
+    // Encode subject and body for mailto
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+    
+    // Create and navigate to mailto link
+    const mailtoLink = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+    window.location.href = mailtoLink;
+    
+    // Close modal after email client opens
+    closeCoursesModal();
 }

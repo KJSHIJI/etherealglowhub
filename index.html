@@ -66,25 +66,22 @@
     <button class="cta-button" onclick="scrollToSection('nature')">✨ Fun & Nature</button>
     <button class="cta-button" onclick="scrollToSection('drawing')">🎨 Art & Creativity</button>
     <button class="cta-button" onclick="window.open('https://www.youtube.com/@etherealglowhub','_blank')">📺 Subscribe Now</button>
-    <button id="joinBtn" class="cta-button" aria-expanded="false">Join Our Courses</button>
-</div>            
-                
-                <!-- Course selection area (hidden initially) -->
-                <div id="coursesArea" class="courses-area" aria-live="polite" style="margin-top:18px; text-align:center;">
-                    <div id="courseButtons" class="course-buttons" hidden>
-                        <button class="course-btn" onclick="showForms('Learn Malayalam')" aria-label="Join Learn Malayalam">Learn Malayalam</button>
-                        <button class="course-btn" onclick="showForms('Learn Tamil')" aria-label="Join Learn Tamil">Learn Tamil</button>
-                        <button class="course-btn" onclick="showForms('Learn English')" aria-label="Join Learn English">Learn English</button>
-                        <button class="course-btn" onclick="showForms('Learn Hindi')" aria-label="Join Learn Hindi">Learn Hindi</button>
-                        <button class="course-btn" onclick="showForms('Drawing for Kids')" aria-label="Join Drawing for Kids">Drawing for Kids</button>
-                    </div>
+    <button id="joinBtn" class="cta-button">Join Our Courses</button>
+</div>
 
-                    <div id="formLinks" class="form-links" hidden style="margin-top:12px;">
-                        <p id="selectedCourse" class="selected-course" style="font-weight:600; color: var(--primary-color);">Selected Course: -</p>
-                        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px;">
-                            <a id="form1" class="form-link" href="#" target="_blank" rel="noopener noreferrer">Open Registration Form 1</a>
-                            <a id="form2" class="form-link" href="#" target="_blank" rel="noopener noreferrer">Open Registration Form 2</a>
-                        </div>
+                <!-- Course Selection Modal -->
+                <div id="coursesModal" role="dialog" aria-modal="true" aria-labelledby="coursesTitle" class="courses-modal" hidden>
+                    <div class="courses-modal-overlay" id="modalOverlay"></div>
+                    <div class="courses-modal-content">
+                        <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close course selection modal">&times;</button>
+                        <h2 id="coursesTitle" class="modal-title">Choose a Course</h2>
+                        <ul class="courses-list" role="listbox">
+                            <li role="option"><button class="course-list-item" data-course="Learn Malayalam">Learn Malayalam</button></li>
+                            <li role="option"><button class="course-list-item" data-course="Learn Hindi">Learn Hindi</button></li>
+                            <li role="option"><button class="course-list-item" data-course="Learn English">Learn English</button></li>
+                            <li role="option"><button class="course-list-item" data-course="Learn Tamil">Learn Tamil</button></li>
+                            <li role="option"><button class="course-list-item" data-course="Learn Drawing & Painting">Learn Drawing & Painting</button></li>
+                        </ul>
                     </div>
                 </div>
             </section>
