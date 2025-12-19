@@ -15,6 +15,23 @@ navLinks.forEach(link => {
     });
 });
 
+// Back to Top Button Functionality
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 // Section Navigation
 function showSection(sectionId) {
     // Hide all sections
@@ -164,6 +181,18 @@ navLinks.forEach(link => {
         trackEvent('section_view', { section: sectionName });
     });
 });
+
+// Prevent layout shift when scrollbar appears/disappears
+function preventLayoutShift() {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = scrollbarWidth + 'px';
+    }
+}
+
+// Call on load
+preventLayoutShift();
+window.addEventListener('resize', preventLayoutShift);
 
 // Print function for users who want to save sections
 function printSection(sectionId) {
