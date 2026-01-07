@@ -1436,86 +1436,125 @@ button:focus {
     }
 }
 
-/* ===== Chip Styles ===== */
+
+/* Center wrapper for standalone CTA */
+.cta-standalone {
+  display: grid;
+  place-items: center;
+  margin: clamp(20px, 4vw, 26px) 0 clamp(4px, 2vw, 6px);
+}
+
+/* Base chip (pill button) */
 .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    border-radius: 24px;
-    background: rgba(107, 70, 193, 0.1);
-    color: var(--primary-color);
-    border: 2px solid rgba(107, 70, 193, 0.3);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.5vw, 8px);
+  padding: clamp(10px, 2.5vw, 12px) clamp(14px, 3vw, 16px);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6e2bff, #b14eff);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(110, 43, 255, 0.28), 0 4px 10px rgba(0, 0, 0, 0.18);
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
-.chip:hover {
-    background: rgba(107, 70, 193, 0.2);
-    border-color: rgba(107, 70, 193, 0.5);
-    transform: translateY(-2px);
+/* Hover/Focus for base chip */
+.chip:hover,
+.chip:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(110, 43, 255, 0.35), 0 6px 14px rgba(0, 0, 0, 0.22);
+  outline: none;
 }
 
-.chip__icon {
-    font-size: 1.2rem;
-}
-
-.chip__label {
-    font-size: inherit;
+/* Icon & badge */
+.chip__icon { 
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem); 
+  line-height: 1; 
+  display: flex;
+  align-items: center;
 }
 
 .chip__badge {
-    background: #fff;
-    color: #6e2bff;
-    font-weight: 700;
-    font-size: 0.72rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  color: #6e2bff;
+  font-weight: 700;
+  font-size: clamp(0.65rem, 1.5vw, 0.72rem);
+  padding: clamp(0.1rem, 0.5vw, 0.15rem) clamp(0.4rem, 1vw, 0.5rem);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
 }
 
+.chip__label {
+  font-size: inherit;
+}
+
+/* Standout style for the 'Join Our Courses' CTA (distinct palette + soft glow) */
 .chip--cta {
-    isolation: isolate;
-    background: linear-gradient(135deg, #8a2be2, #ff4d8d, #5ac8fa);
-    background-size: 200% 200%;
-    animation: ctaGradient 8s ease infinite;
-    border: 2px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 20px rgba(80, 0, 190, 0.25);
-    color: white;
+  background: linear-gradient(135deg, #ff7bd7, #ffb86b, #6be7ff);
+  background-size: 200% 200%;
+  animation: ctaGradient 8s ease infinite;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 24px rgba(255, 120, 190, 0.28), 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
 @keyframes ctaGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* Soft outer glow (never blocks clicks) */
 .chip--cta::after {
-    content: "";
-    position: absolute;
-    inset: -6px;
-    border-radius: inherit;
-    background: radial-gradient(60% 60% at 50% 50%, rgba(255, 255, 255, 0.35), transparent 60%);
-    filter: blur(10px);
-    z-index: -1;
-    opacity: 0.6;
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(255, 255, 255, 0.35), transparent 60%);
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0.7;
+  pointer-events: none;
 }
 
+/* Hover lift for CTA */
 .chip--cta:hover,
 .chip--cta:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(80, 0, 190, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(255, 120, 190, 0.35), 0 8px 18px rgba(0, 0, 0, 0.22);
 }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .chip--cta { 
+    animation: none; 
+  }
+  .chip,
+  .chip--cta {
+    transition: none;
+  }
+}
+
+/* Mobile optimizations for chip */
+@media (max-width: 640px) {
+  .chip {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .chip--cta {
+    max-width: 100%;
+  }
+}
+
 
 /* ===== Modal Styles ===== */
 .modal {
@@ -1525,6 +1564,7 @@ button:focus {
     place-items: center;
     background: rgba(0, 0, 0, 0.45);
     z-index: 9999;
+    padding: 16px;
 }
 
 .modal[hidden] {
@@ -1536,19 +1576,38 @@ button:focus {
     width: min(560px, 92%);
     background: #fff;
     border-radius: 16px;
-    padding: 18px 22px;
+    padding: clamp(16px, 4vw, 24px);
     box-shadow: 0 20px 34px rgba(110, 43, 255, 0.25), 0 10px 14px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modal__close {
     position: absolute;
-    top: 10px;
-    right: 12px;
+    top: clamp(8px, 2vw, 12px);
+    right: clamp(8px, 2vw, 12px);
     background: transparent;
     border: none;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 3vw, 1.4rem);
     cursor: pointer;
-    padding: 8px;
+    padding: clamp(8px, 2vw, 12px);
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1;
     color: #333;
     transition: all 0.2s ease;
@@ -1558,20 +1617,23 @@ button:focus {
 .modal__close:focus-visible {
     transform: scale(1.2);
     color: #000;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
 }
 
 #courseModalTitle {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 800;
     color: #5b2bd6;
     text-align: center;
-    margin: 8px 0 16px;
+    margin: clamp(6px, 2vw, 8px) 0 clamp(12px, 3vw, 16px);
+    padding-right: 36px;
 }
 
 .course-list {
     display: grid;
-    gap: 12px;
-    margin: 12px 0 6px;
+    gap: clamp(10px, 2vw, 12px);
+    margin: clamp(10px, 2vw, 12px) 0 clamp(4px, 1vw, 6px);
     padding: 0;
     list-style: none;
 }
@@ -1579,8 +1641,8 @@ button:focus {
 .course-item {
     width: 100%;
     text-align: left;
-    padding: 14px 16px;
-    border-radius: 14px;
+    padding: clamp(12px, 3vw, 14px) clamp(14px, 3vw, 16px);
+    border-radius: clamp(10px, 2vw, 14px);
     background: #f6edff;
     color: #5b2bd6;
     border: 2px solid #a884ff;
@@ -1588,7 +1650,10 @@ button:focus {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1rem);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .course-item:hover,
@@ -1600,6 +1665,57 @@ button:focus {
 .course-item:focus-visible {
     outline: 3px solid #7b2cff;
     outline-offset: 2px;
+}
+
+/* Mobile: Bottom Sheet Modal */
+@media (max-width: 640px) {
+    .modal {
+        align-items: flex-end;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0;
+    }
+
+    .modal__card {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: clamp(16px, 4vw, 20px) clamp(16px, 4vw, 20px) calc(clamp(16px, 4vw, 20px) + env(safe-area-inset-bottom));
+        max-height: 80vh;
+        animation: sheetSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes sheetSlideUp {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #courseModalTitle {
+        padding-right: 32px;
+    }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+    .modal__card {
+        padding-left: max(clamp(16px, 4vw, 24px), env(safe-area-inset-left));
+        padding-right: max(clamp(16px, 4vw, 24px), env(safe-area-inset-right));
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    .modal__card {
+        border-radius: 16px 16px 0 0;
+    }
+
+    #courseModalTitle {
+        margin-bottom: clamp(10px, 2vw, 14px);
+    }
 }
 
 /* ===== Course Selection Modal Styles ===== */

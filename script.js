@@ -314,6 +314,8 @@ document.addEventListener("keydown", (e) => {
 function openModal() {
     if (modal) {
         modal.hidden = false;
+        // Prevent body scroll on mobile
+        document.body.style.overflow = 'hidden';
         // Focus first course item
         const first = courseItems[0];
         first?.focus();
@@ -324,6 +326,8 @@ function openModal() {
 function closeModal() {
     if (modal) {
         modal.hidden = true;
+        // Re-enable body scroll
+        document.body.style.overflow = '';
         // Return focus to CTA chip
         ctaChip?.focus();
     }
