@@ -263,27 +263,59 @@ function playSound(sound) {
         speechSynthesis.speak(utterance);
     }
 }
-// ===== Email Configuration =====
-const EMAIL_TO = "etherealglowhub1@gmail.com"; // Change this if needed
 
-function subjectFor(course) {
-    return `Enquiry - ${course}`;
-}
+// Config
+const EMAIL_TO = "etherealglowhub1@gmail.com"; // change if needed
 
+function subjectFor(course) { return `Enquiry - ${course}`; }
 function bodyFor(course) {
-    return [
-        "Hello EtherealGlowHub Team,",
-        `I would like to enquire about "${course}".`,
-        "Please share details (schedule, fees, duration).",
-        "Thanks!"
-    ].join("\n");
+  return [
+    "Hello EtherealGlowHub Team,",
+    `I would like to enquire about "${course}".`,
+    "Please share details (schedule, fees, duration).",
+    "Thanks!"
+  ].join("\n");
+}
+function encodedMailto(to, subject, body) {
+  const s = encodeURIComponent(subject);
+  const b = encodeURIComponent(body).replace(/%0A/g, "%0D%0A"); // CRLF
+  return `mailto:${encodeURIComponent(to)}?subject=${s}&body=${b}`;
 }
 
-// ===== Mailto Utility =====
-function encodedMailto(to, subject, body) {
-    const encSubject = encodeURIComponent(subject);
-    const encBody = encodeURIComponent(body).replace(/%0A/g, "%0D%0A");
-    return `mailto:${encodeURIComponent(to)}?subject=${encSubject}&body=${encBody}`;
+// DOM
+const cta = document.getElementById("ctaJoinCourses") || document.querySelector(".cta-shimmer");
+const modal = document.getElementById("courseModal");
+const closeBtn = modal ? modal.querySelector(".modal__close") : null;
+const items = modal ? Array.from(modal.querySelectorAll(".course-item")) : [];
+
+// Open/close modal
+if (cta) cta.addEventListener("click", (e) => { e.preventDefault(); openModal(); });
+if (closeBtn) closeBtn.addEventListener("click", closeModal);
+if (modal) modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener("keydown", (e) => { if (!modal.hidden && e.key === "Escape") closeModal(); });
+
+function openModal(){ modal.hidden = false; items[0]?.focus(); trapFocus(modal); }
+function closeModal(){ modal.hidden = true; cta?.focus(); }
+
+// Course click -> default email client
+items.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const course = btn.dataset.course;
+    const url = encodedMailto(EMAIL_TO, subjectFor(course), bodyFor(course));
+    window.location.href = url; // opens OS default mail app
+    closeModal();
+  });
+});
+
+// Focus trap
+function trapFocus(container){
+  const focusables = container.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+  const first = focusables[0], last = focusables[focusables.length - 1];
+  container.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+    if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+    else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+  }, { once: true });
 }
 
 // ===== Course Selection Modal Logic =====

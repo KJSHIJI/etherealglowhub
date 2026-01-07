@@ -68,15 +68,20 @@
     <button class="cta-button" onclick="window.open('https://www.youtube.com/@etherealglowhub','_blank')">📺 Subscribe Now</button>
 </div>
 
-                    <!-- Horizontal Chip Row -->
-                    <div class="chips-row" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
-                        <a href="#courses" id="ctaJoinCourses" class="chip chip--cta" role="button">
-                            <span class="chip__icon">🎓</span>
-                            <span class="chip__label">Join Our Courses</span>
-                            <span class="chip__badge">New</span>
-                        </a>
-                    </div>
 
+
+<!-- Standalone CTA wrapper (separate from chip row) -->
+<section class="cta-standalone">
+  #
+    <span class="cta-shimmer__glow" aria-hidden="true"></span>
+    <span class="cta-shimmer__label">Join Our Courses</span>
+    <span class="cta-shimmer__sparkle" aria-hidden="true">✨</span>
+  </a>
+  <p id="cta-join-desc" class="visually-hidden">
+    Opens a course chooser dialog. After selecting a course your default email app will open with a prefilled message.
+  </p>
+</section>
+``
 
                 <!-- Course Selection Modal -->
                 <div id="courseModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="courseModalTitle" hidden>
