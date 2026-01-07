@@ -66,21 +66,29 @@
     <button class="cta-button" onclick="scrollToSection('nature')">✨ Fun & Nature</button>
     <button class="cta-button" onclick="scrollToSection('drawing')">🎨 Art & Creativity</button>
     <button class="cta-button" onclick="window.open('https://www.youtube.com/@etherealglowhub','_blank')">📺 Subscribe Now</button>
-    <button id="joinBtn" class="cta-button">Join Our Courses</button>
 </div>
 
+                    <!-- Horizontal Chip Row -->
+                    <div class="chips-row" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
+                        <a href="#courses" id="ctaJoinCourses" class="chip chip--cta" role="button">
+                            <span class="chip__icon">🎓</span>
+                            <span class="chip__label">Join Our Courses</span>
+                            <span class="chip__badge">New</span>
+                        </a>
+                    </div>
+
+
                 <!-- Course Selection Modal -->
-                <div id="coursesModal" role="dialog" aria-modal="true" aria-labelledby="coursesTitle" class="courses-modal" hidden>
-                    <div class="courses-modal-overlay" id="modalOverlay"></div>
-                    <div class="courses-modal-content">
-                        <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close course selection modal">&times;</button>
-                        <h2 id="coursesTitle" class="modal-title">Choose a Course</h2>
-                        <ul class="courses-list" role="listbox">
-                            <li role="option"><button class="course-list-item" data-course="Learn Malayalam">Learn Malayalam</button></li>
-                            <li role="option"><button class="course-list-item" data-course="Learn Hindi">Learn Hindi</button></li>
-                            <li role="option"><button class="course-list-item" data-course="Learn English">Learn English</button></li>
-                            <li role="option"><button class="course-list-item" data-course="Learn Tamil">Learn Tamil</button></li>
-                            <li role="option"><button class="course-list-item" data-course="Learn Drawing & Painting">Learn Drawing & Painting</button></li>
+                <div id="courseModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="courseModalTitle" hidden>
+                    <div class="modal__card">
+                        <button class="modal__close" aria-label="Close">✕</button>
+                        <h2 id="courseModalTitle">Choose a Course</h2>
+                        <ul class="course-list" role="list">
+                            <li><button class="course-item" data-course="Learn Malayalam">Learn Malayalam</button></li>
+                            <li><button class="course-item" data-course="Learn Hindi">Learn Hindi</button></li>
+                            <li><button class="course-item" data-course="Learn English">Learn English</button></li>
+                            <li><button class="course-item" data-course="Learn Tamil">Learn Tamil</button></li>
+                            <li><button class="course-item" data-course="Learn Drawing & Painting">Learn Drawing & Painting</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1238,6 +1246,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
