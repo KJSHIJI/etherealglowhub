@@ -263,134 +263,131 @@ function playSound(sound) {
         speechSynthesis.speak(utterance);
     }
 }
-
-// Config
-const EMAIL_TO = "etherealglowhub1@gmail.com"; // change if needed
-
-function subjectFor(course) { return `Enquiry - ${course}`; }
-function bodyFor(course) {
-  return [
-    "Hello EtherealGlowHub Team,",
-    `I would like to enquire about "${course}".`,
-    "Please share details (schedule, fees, duration).",
-    "Thanks!"
-  ].join("\n");
-}
-function encodedMailto(to, subject, body) {
-  const s = encodeURIComponent(subject);
-  const b = encodeURIComponent(body).replace(/%0A/g, "%0D%0A"); // CRLF
-  return `mailto:${encodeURIComponent(to)}?subject=${s}&body=${b}`;
-}
-
-// DOM
-const cta = document.getElementById("ctaJoinCourses") || document.querySelector(".cta-shimmer");
-const modal = document.getElementById("courseModal");
-const closeBtn = modal ? modal.querySelector(".modal__close") : null;
-const items = modal ? Array.from(modal.querySelectorAll(".course-item")) : [];
-
-// Open/close modal
-if (cta) cta.addEventListener("click", (e) => { e.preventDefault(); openModal(); });
-if (closeBtn) closeBtn.addEventListener("click", closeModal);
-if (modal) modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-document.addEventListener("keydown", (e) => { if (!modal.hidden && e.key === "Escape") closeModal(); });
-
-function openModal(){ modal.hidden = false; items[0]?.focus(); trapFocus(modal); }
-function closeModal(){ modal.hidden = true; cta?.focus(); }
-
-// Course click -> default email client
-items.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const course = btn.dataset.course;
-    const url = encodedMailto(EMAIL_TO, subjectFor(course), bodyFor(course));
-    window.location.href = url; // opens OS default mail app
-    closeModal();
-  });
-});
-
-// Focus trap
-function trapFocus(container){
-  const focusables = container.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
-  const first = focusables[0], last = focusables[focusables.length - 1];
-  container.addEventListener("keydown", (e) => {
-    if (e.key !== "Tab") return;
-    if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
-    else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
-  }, { once: true });
-}
-
 // ===== Course Selection Modal Logic =====
-const ctaChip = document.getElementById("ctaJoinCourses");
-const modal = document.getElementById("courseModal");
-const closeBtn = modal?.querySelector(".modal__close");
-const courseItems = modal ? Array.from(modal.querySelectorAll(".course-item")) : [];
 
-// Open modal on CTA chip click
-ctaChip?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal();
-});
+const joinBtn = document.getElementById('joinBtn');
+const coursesModal = document.getElementById('coursesModal');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const courseListItems = document.querySelectorAll('.course-list-item');
 
-// Close modal on close button click
-closeBtn?.addEventListener("click", closeModal);
+let focusedElementBeforeModal = null;
 
-// Close modal when clicking outside (on the modal backdrop)
-modal?.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-});
-
-// Close modal on Escape key
-document.addEventListener("keydown", (e) => {
-    if (!modal?.hidden && e.key === "Escape") closeModal();
-});
-
-function openModal() {
-    if (modal) {
-        modal.hidden = false;
-        // Focus first course item
-        const first = courseItems[0];
-        first?.focus();
-        trapFocus(modal);
-    }
+// Open modal when 'Join Our Courses' button is clicked
+if (joinBtn) {
+    joinBtn.addEventListener('click', () => {
+        openCoursesModal();
+    });
 }
 
-function closeModal() {
-    if (modal) {
-        modal.hidden = true;
-        // Return focus to CTA chip
-        ctaChip?.focus();
-    }
+// Close modal when close button is clicked
+if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', () => {
+        closeCoursesModal();
+    });
 }
 
-// Focus trapping within modal
-function trapFocus(container) {
-    const focusables = container.querySelectorAll(
-        'button, [href], [tabindex]:not([tabindex="-1"])'
-    );
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
+// Close modal when overlay is clicked
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', () => {
+        closeCoursesModal();
+    });
+}
 
-    container.addEventListener("keydown", (e) => {
-        if (e.key !== "Tab") return;
-        if (e.shiftKey && document.activeElement === first) {
-            last?.focus();
-            e.preventDefault();
-        } else if (!e.shiftKey && document.activeElement === last) {
-            first?.focus();
-            e.preventDefault();
+// Open modal function
+function openCoursesModal() {
+    if (coursesModal) {
+        focusedElementBeforeModal = document.activeElement;
+        coursesModal.removeAttribute('hidden');
+        
+        // Set focus to first course button
+        const firstCourseBtn = courseListItems[0];
+        if (firstCourseBtn) {
+            setTimeout(() => firstCourseBtn.focus(), 100);
         }
-    }, { once: true });
+        
+        // Trap focus within modal
+        setupFocusTrap();
+    }
 }
 
-// Handle course item clicks
-courseItems.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const course = btn.dataset.course;
-        const mailto = encodedMailto(
-            EMAIL_TO,
-            subjectFor(course),
-            bodyFor(course)
-        );
-        window.location.href = mailto;
-        closeModal();
+// Close modal function
+function closeCoursesModal() {
+    if (coursesModal) {
+        coursesModal.setAttribute('hidden', '');
+        removeFocusTrap();
+        
+        // Restore focus to button that opened the modal
+        if (focusedElementBeforeModal && focusedElementBeforeModal.focus) {
+            focusedElementBeforeModal.focus();
+        }
+    }
+}
+
+// Focus trap management
+let focusTrapListener = null;
+
+function setupFocusTrap() {
+    const focusableElements = coursesModal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    focusTrapListener = (e) => {
+        if (e.key !== 'Tab') return;
+        
+        if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            }
+        } else {
+            if (document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+    };
+    
+    coursesModal.addEventListener('keydown', focusTrapListener);
+}
+
+function removeFocusTrap() {
+    if (focusTrapListener && coursesModal) {
+        coursesModal.removeEventListener('keydown', focusTrapListener);
+    }
+}
+
+// Handle Escape key to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && coursesModal && !coursesModal.hasAttribute('hidden')) {
+        closeCoursesModal();
+    }
+});
+
+// Handle course selection - open mailto link
+courseListItems.forEach(button => {
+    button.addEventListener('click', () => {
+        const courseName = button.getAttribute('data-course');
+        handleCourseSelection(courseName);
     });
 });
+
+function handleCourseSelection(courseName) {
+    const email = 'etherealglowhub1@gmail.com';
+    const subject = `Enquiry - ${courseName}`;
+    const body = `Hello EtherealGlowHub Team,\nI would like to enquire about "${courseName}".\nPlease share details (schedule, fees, duration).\nThanks!`;
+    
+    // Encode subject and body for mailto
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+    
+    // Create and navigate to mailto link
+    const mailtoLink = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+    window.location.href = mailtoLink;
+    
+    // Close modal after email client opens
+    closeCoursesModal();
+}
